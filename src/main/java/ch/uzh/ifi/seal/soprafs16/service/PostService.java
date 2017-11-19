@@ -419,8 +419,7 @@ public class PostService {
              {
                  train.getWagons().get(userPosition/2).getTrainLevels().get(userPosition%2).removeLoot(loot);
                  loot.setUserId(move.getUserId());
-                 Loot newLoot = new MoneyBag();
-                 newLoot = loot;
+                 new MoneyBag();
                  lootRepo.save(loot);
                  trainRepo.save(train);
                  break;
@@ -521,7 +520,7 @@ public class PostService {
                     csRepo.save(cs);
                     ammoCardRepo.save(ammoCard);
                 }
-                int pos = train.findUserInTrain(move.getUserId());
+                train.findUserInTrain(move.getUserId());
                 int marshalPos = train.findMarshal();
                 Character character = train.getCharacterInTrain(move.getUserId());
                 train.removeCharacterInTrain(move.getUserId());

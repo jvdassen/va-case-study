@@ -106,7 +106,7 @@ public class GameServiceController
             return game.getId();
         }
 
-        return (long)0;
+        return 0;
     }
 
     /*
@@ -197,7 +197,7 @@ public class GameServiceController
         } else {
             logger.error("Error adding player with token: " + userToken);
         }
-        return (long)0;
+        return 0;
     }
 
     /* Get a player of a game */

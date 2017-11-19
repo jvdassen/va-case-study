@@ -228,7 +228,7 @@ public class SpecialEventService
             }break;
             case REVENGE_MARSHAL:
             {
-                List<Character> characters = new ArrayList<Character>();
+                new ArrayList<Character>();
                 for (Character character : train.getWagons().get(train.findMarshal()/2).getTrainLevels().get(1).getCharacters())
                 {
                     List<Loot> loots = lootRepo.findByUserId(character.getUserId());
