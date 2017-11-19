@@ -1,7 +1,6 @@
 package ch.uzh.ifi.seal.soprafs16.service;
 
 import ch.uzh.ifi.seal.soprafs16.model.*;
-import ch.uzh.ifi.seal.soprafs16.model.Character;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import java.util.Map;
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by Laurenz on 24/04/16.
@@ -29,34 +27,10 @@ public class ResultService
     private LootRepository lootRepo;
 
     @Autowired
-    private TrainRepository trainRepo;
-
-    @Autowired
-    private RoundCardRepository rcRepo;
-
-    @Autowired
-    private GameStateRepository gsRepo;
-
-    @Autowired
-    private UserRepository userRepo;
-
-    @Autowired
-    private ActionCardRepository actionCardRepo;
-
-    @Autowired
     private AmmoCardRepository ammoCardRepo;
 
     @Autowired
     private CardStackRepository csRepo;
-
-    @Autowired
-    private CharacterRepository charRepo;
-
-    @Autowired
-    private GameStateRepository gameStateRepo;
-
-    @Autowired
-    private FlowService flowService;
 
     /* Determines the ones that have the most victims. There can be several revolverheros
     @return list<long>: list with the user ids that are revolver heros.

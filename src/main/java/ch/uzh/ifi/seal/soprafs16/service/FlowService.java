@@ -1,15 +1,9 @@
 package ch.uzh.ifi.seal.soprafs16.service;
 
 import ch.uzh.ifi.seal.soprafs16.model.*;
-import ch.uzh.ifi.seal.soprafs16.model.Character;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by Laurenz on 24/04/16.
@@ -20,43 +14,13 @@ public class FlowService {
 
 
     @Autowired
-    private GameRepository gameRepo;
-
-    @Autowired
-    private LootRepository lootRepo;
-
-    @Autowired
-    private TrainRepository trainRepo;
-
-    @Autowired
-    private RoundCardRepository rcRepo;
-
-    @Autowired
-    private GameStateRepository gsRepo;
-
-    @Autowired
-    private UserRepository userRepo;
-
-    @Autowired
-    private ActionCardRepository actionCardRepo;
-
-    @Autowired
-    private AmmoCardRepository ammoCardRepo;
-
-    @Autowired
     private CardStackRepository csRepo;
-
-    @Autowired
-    private CharacterRepository charRepo;
 
     @Autowired
     private GameStateRepository gameStateRepo;
 
     @Autowired
     private UpdateService updateService;
-
-    @Autowired
-    private ResultService resultService;
 
     @Autowired
     private SpecialEventService specialEventService;

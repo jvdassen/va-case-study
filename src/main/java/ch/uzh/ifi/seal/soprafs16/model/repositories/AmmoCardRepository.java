@@ -12,6 +12,6 @@ import java.util.List;
 
 @Repository("ammoCardRepository")
 public interface AmmoCardRepository extends CrudRepository<AmmoCard, Long> {
-    List<AmmoCard> findByGameId(long gameId);
+    List<AmmoCard> findByGameId(Long gameId);
     List<AmmoCard> findByUserId(long userId);
 }

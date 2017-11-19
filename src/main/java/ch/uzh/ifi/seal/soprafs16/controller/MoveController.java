@@ -5,13 +5,9 @@ package ch.uzh.ifi.seal.soprafs16.controller;
  */
 import ch.uzh.ifi.seal.soprafs16.model.*;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
-
-import ch.uzh.ifi.seal.soprafs16.service.AbilityCheck;
 import ch.uzh.ifi.seal.soprafs16.service.FlowService;
 import ch.uzh.ifi.seal.soprafs16.service.PostService;
-import ch.uzh.ifi.seal.soprafs16.service.UpdateService;
 import org.springframework.web.bind.annotation.RestController;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,26 +20,12 @@ public class MoveController extends GenericService {
 
     Logger logger = LoggerFactory.getLogger(MoveController.class);
 
-    @Autowired
-    private ActionCardRepository actionCardRepo;
 
     @Autowired
     private PostService postService;
 
     @Autowired
-    private AbilityCheck abilityService;
-
-    @Autowired
-    private CharacterRepository charRepo;
-
-    @Autowired
-    private GameStateRepository gameStateRepo;
-
-    @Autowired
     private CardStackRepository csRepo;
-
-    @Autowired
-    private UpdateService updateService;
 
     @Autowired
     private FlowService flowService;

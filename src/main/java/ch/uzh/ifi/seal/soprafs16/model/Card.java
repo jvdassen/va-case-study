@@ -1,17 +1,15 @@
 package ch.uzh.ifi.seal.soprafs16.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Laurenz on 05/04/16.
  */
-
-import javax.persistence.*;
-
-import java.io.Serializable;
-import java.util.List;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
-
-import ch.uzh.ifi.seal.soprafs16.constant.GameStatus;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
 
 @Entity
 @Inheritance

@@ -1,17 +1,13 @@
 package ch.uzh.ifi.seal.soprafs16.model;
 
-/**
- * Created by Laurenz on 05/04/16.
- */
-
-import java.io.Serializable;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import javax.persistence.*;
-
-import ch.uzh.ifi.seal.soprafs16.constant.GameStatus;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 @Entity
 public class RoundCard extends Card {

@@ -2,9 +2,7 @@ package ch.uzh.ifi.seal.soprafs16.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
-import java.util.List;
 
 /**
  * Created by Laurenz on 28/04/16.
@@ -13,7 +11,12 @@ import java.util.List;
 @Entity
 public class DTOMarshal extends Move{
 
-    @Column
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Column
     private boolean left;
 
     @OneToOne

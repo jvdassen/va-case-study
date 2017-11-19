@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -33,18 +32,6 @@ public class SpecialEventService
     private TrainRepository trainRepo;
 
     @Autowired
-    private RoundCardRepository rcRepo;
-
-    @Autowired
-    private GameStateRepository gsRepo;
-
-    @Autowired
-    private UserRepository userRepo;
-
-    @Autowired
-    private ActionCardRepository actionCardRepo;
-
-    @Autowired
     private AmmoCardRepository ammoCardRepo;
 
     @Autowired
@@ -55,9 +42,6 @@ public class SpecialEventService
 
     @Autowired
     private GameStateRepository gameStateRepo;
-
-    @Autowired
-    private FlowService flowService;
 
     @Autowired
     private SERepository seRepository;

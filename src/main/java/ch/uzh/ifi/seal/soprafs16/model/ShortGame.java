@@ -1,10 +1,11 @@
 package ch.uzh.ifi.seal.soprafs16.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.io.Serializable;
 
 /**
  * Created by Laurenz on 16/05/16.

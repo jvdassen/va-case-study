@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ch.uzh.ifi.seal.soprafs16.GameConstants;
 import ch.uzh.ifi.seal.soprafs16.model.Game;
-import ch.uzh.ifi.seal.soprafs16.model.Move;
 import ch.uzh.ifi.seal.soprafs16.model.User;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.GameRepository;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.UserRepository;
@@ -155,47 +154,9 @@ public class GameServiceController
     public Map<Long, Integer> stopGame(@PathVariable Long gameId) {
         logger.debug("stopGame: " + gameId);
 
-        Game game = gameRepo.findOne(gameId);
-
         return resultService.summarizeResult(gameId);
 
     }
-
-    /*
-     * Context: /game/{game-id}/move
-     */
-//    @RequestMapping(value = CONTEXT + "/{gameId}/move")
-//    @ResponseStatus(HttpStatus.OK)
-//    public List<Move> listMoves(@PathVariable Long gameId) {
-//        logger.debug("listMoves");
-//
-//        Game game = gameRepo.findOne(gameId);
-//        if (game != null) {
-//           // return game.getMoves();
-//        }
-//
-//        return null;
-//    }
-
-//    @RequestMapping(value = CONTEXT + "/{gameId}/move", method = RequestMethod.POST)
-//    @ResponseStatus(HttpStatus.OK)
-//    public void addMove(@RequestBody Move move) {
-//        logger.debug("addMove: " + move);
-//        // TODO Mapping into Move + execution of move
-//    }
-
-//    @RequestMapping(value = CONTEXT + "/{gameId}/move/{moveId}")
-//    @ResponseStatus(HttpStatus.OK)
-//    public Move getMove(@PathVariable Long gameId, @PathVariable Integer moveId) {
-//        logger.debug("getMove: " + gameId);
-//
-//        Game game = gameRepo.findOne(gameId);
-//        if (game != null) {
-//            //return game.getMoves().get(moveId);
-//        }
-//
-//        return null;
-//    }
 
     /*
      * Context: /game/{game-id}/player

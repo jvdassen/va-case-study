@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository("actionCardRepository")
 public interface ActionCardRepository extends CrudRepository<ActionCard, Long> {
-    List<ActionCard> findByGameId(long gameId);
+    List<ActionCard> findByGameId(Long gameId);
     List<ActionCard> findByCardNumAndUserId(int cardNum, long userId);
     List<ActionCard> findByCardNum(int cardNum);
 }

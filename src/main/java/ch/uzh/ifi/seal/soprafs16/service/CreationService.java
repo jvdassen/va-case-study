@@ -38,9 +38,6 @@ public class CreationService {
     private GameStateRepository gsRepo;
 
     @Autowired
-    private UserRepository userRepo;
-
-    @Autowired
     private ActionCardRepository actionCardRepo;
 
     @Autowired

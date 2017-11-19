@@ -33,12 +33,6 @@ public class AssigningService {
     private RoundCardRepository rcRepo;
 
     @Autowired
-    private GameStateRepository gsRepo;
-
-    @Autowired
-    private UserRepository userRepo;
-
-    @Autowired
     private ActionCardRepository actionCardRepo;
 
     @Autowired
@@ -140,7 +134,7 @@ public class AssigningService {
         lootRepo.save(loots);
 
         for (int i = 0; i < loots.size(); i++) {
-            if (loots.get(i) instanceof Lockbox && loots.get(i).getTrainId() == (long) 0) {
+            if (loots.get(i) instanceof Lockbox && loots.get(i).getTrainId() == 0) {
                 List<CardStack> csl = new ArrayList<CardStack>();
                 csl = csRepo.findByGameId(gameId);
                 csl.get(0).setLockbox(loots.get(i));

@@ -13,5 +13,5 @@ import java.util.List;
 
 @Repository("roundCardRepository")
 public interface RoundCardRepository extends CrudRepository<RoundCard, Long> {
-    List<RoundCard> findByGameId(long gameId);
+    List<RoundCard> findByGameId(Long gameId);
 }

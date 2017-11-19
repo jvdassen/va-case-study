@@ -1,15 +1,13 @@
 package ch.uzh.ifi.seal.soprafs16.model;
 
-/**
- * Created by Laurenz on 13/04/16.
- */
-
-import ch.uzh.ifi.seal.soprafs16.model.repositories.TrainRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import javax.persistence.*;
-
 import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class SpecialAbility implements Serializable{

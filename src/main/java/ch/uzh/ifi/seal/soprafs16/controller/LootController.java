@@ -1,14 +1,8 @@
 package ch.uzh.ifi.seal.soprafs16.controller;
 
-import ch.uzh.ifi.seal.soprafs16.model.repositories.CharacterRepository;
-
-/**
- * Created by Laurenz on 14/04/16.
- */
 
 import ch.uzh.ifi.seal.soprafs16.model.repositories.LootRepository;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.UserRepository;
-import ch.uzh.ifi.seal.soprafs16.service.CreationService;
 import org.springframework.web.bind.annotation.RestController;
 import ch.uzh.ifi.seal.soprafs16.model.Loot;
 import org.slf4j.Logger;

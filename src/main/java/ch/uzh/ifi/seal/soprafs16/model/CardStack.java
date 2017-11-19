@@ -1,9 +1,16 @@
 package ch.uzh.ifi.seal.soprafs16.model;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  * Created by Laurenz on 14/04/16.
@@ -183,6 +190,8 @@ public class CardStack implements Serializable {
                 {
                     return rcStack.get(0);
                 }
+			default:
+				break;
             }
         }
         //short game

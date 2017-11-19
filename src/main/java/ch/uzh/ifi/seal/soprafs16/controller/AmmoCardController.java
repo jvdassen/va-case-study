@@ -2,7 +2,6 @@ package ch.uzh.ifi.seal.soprafs16.controller;
 
 import ch.uzh.ifi.seal.soprafs16.model.AmmoCard;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.AmmoCardRepository;
-import ch.uzh.ifi.seal.soprafs16.model.repositories.CardStackRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +23,6 @@ public class AmmoCardController  extends GenericService {
     @Autowired
     private AmmoCardRepository amcaRepo;
 
-    @Autowired
-    private CardStackRepository csRepo;
 
     private final String   CONTEXT = "/ammocards";
 

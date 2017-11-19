@@ -6,13 +6,13 @@ package ch.uzh.ifi.seal.soprafs16.model;
  */
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
-import javax.persistence.*;
-
-import ch.uzh.ifi.seal.soprafs16.constant.GameStatus;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class GameState implements  Serializable{

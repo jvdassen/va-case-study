@@ -1,9 +1,15 @@
 package ch.uzh.ifi.seal.soprafs16.model;
 
-import ch.uzh.ifi.seal.soprafs16.constant.LootType;
-
-import javax.persistence.*;
 import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import ch.uzh.ifi.seal.soprafs16.constant.LootType;
 
 /**
  * Created by Laurenz on 13/05/16.

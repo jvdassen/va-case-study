@@ -13,7 +13,10 @@ import javax.persistence.OneToOne;
 @Entity
 public class DTOInvalid extends Move{
 
-    @Column
+
+	private static final long serialVersionUID = 1L;
+
+	@Column
     private boolean walkedIntoMarshal;
 
     @OneToOne

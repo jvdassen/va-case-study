@@ -3,10 +3,10 @@ package ch.uzh.ifi.seal.soprafs16.model;
 /**
  * Created by Laurenz on 05/04/16.
  */
-
-import javax.persistence.*;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Entity
 public class AmmoCard extends Card {

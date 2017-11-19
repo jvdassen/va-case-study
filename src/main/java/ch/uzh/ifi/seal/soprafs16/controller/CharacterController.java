@@ -5,12 +5,8 @@ package ch.uzh.ifi.seal.soprafs16.controller;
  */
 
 import ch.uzh.ifi.seal.soprafs16.model.CardStack;
-import ch.uzh.ifi.seal.soprafs16.model.Game;
-import ch.uzh.ifi.seal.soprafs16.model.User;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.CardStackRepository;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.CharacterRepository;
-import ch.uzh.ifi.seal.soprafs16.service.AssigningService;
-import ch.uzh.ifi.seal.soprafs16.service.CreationService;
 import org.springframework.web.bind.annotation.RestController;
 import ch.uzh.ifi.seal.soprafs16.model.Character;
 import org.slf4j.Logger;
@@ -32,16 +28,9 @@ public class CharacterController extends GenericService{
     private CharacterRepository charRepo;
 
     @Autowired
-    private CreationService creaSer;
-
-    @Autowired
     private CardStackRepository csRepo;
 
-    @Autowired
-    private AssigningService assSer;
-
     private final String CONTEXT = "/characters";
-    private boolean first = true;
 
 
     /*//Start Game dummy

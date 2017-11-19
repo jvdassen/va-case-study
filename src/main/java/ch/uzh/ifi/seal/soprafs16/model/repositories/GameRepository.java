@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository("gameRepository")
 public interface GameRepository extends CrudRepository<Game, Long> {
 	User findByName(String name);
-	Game findById(long id);
+	Game findById(Long id);
 }

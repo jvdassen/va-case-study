@@ -29,12 +29,6 @@ public class PostService {
     private TrainRepository trainRepo;
 
     @Autowired
-    private RoundCardRepository rcRepo;
-
-    @Autowired
-    private GameStateRepository gsRepo;
-
-    @Autowired
     private UserRepository userRepo;
 
     @Autowired
@@ -419,13 +413,13 @@ public class PostService {
         else if (move instanceof DTORob)
         {
             int userPosition= train.findUserInTrain(move.getUserId());
-            Loot newLoot = new MoneyBag();
             for (Loot loot : train.getWagons().get(userPosition/2).getTrainLevels().get(userPosition%2).getLoot())
             {
              if (loot.getValue()==((DTORob) move).getDTOLoot().getValue() && loot.getLootType().equals(((DTORob) move).getDTOLoot().getLootType()))
              {
                  train.getWagons().get(userPosition/2).getTrainLevels().get(userPosition%2).removeLoot(loot);
                  loot.setUserId(move.getUserId());
+                 Loot newLoot = new MoneyBag();
                  newLoot = loot;
                  lootRepo.save(loot);
                  trainRepo.save(train);
