@@ -2,10 +2,6 @@ package ch.uzh.ifi.seal.soprafs16.controller;
 
 import org.springframework.web.bind.annotation.*;
 
-/**
- * Created by Laurenz on 07/04/16.
- */
-
 @RestController
 public class PlayController  extends GenericService {
 //

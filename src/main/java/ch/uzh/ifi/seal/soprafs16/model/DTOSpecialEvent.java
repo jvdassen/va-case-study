@@ -8,9 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-/**
- * Created by Laurenz on 16/05/16.
- */
 
 @Entity
 public class DTOSpecialEvent implements Serializable

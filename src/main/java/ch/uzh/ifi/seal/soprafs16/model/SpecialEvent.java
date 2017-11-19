@@ -9,9 +9,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-/**
- * Created by Laurenz on 16/04/16.
- */
 
 @Entity
 public class SpecialEvent implements Serializable {

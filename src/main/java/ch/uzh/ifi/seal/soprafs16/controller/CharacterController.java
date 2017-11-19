@@ -1,8 +1,5 @@
 package ch.uzh.ifi.seal.soprafs16.controller;
 
-/**
- * Created by Laurenz on 13/04/16.
- */
 
 import ch.uzh.ifi.seal.soprafs16.model.CardStack;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.CardStackRepository;

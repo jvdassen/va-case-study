@@ -1,9 +1,5 @@
 package ch.uzh.ifi.seal.soprafs16.model;
 
-/**
- * @author Laurenz Shi
- * Class to inform client about the standings right now. With the individual information of the own standings.
- */
 
 import java.io.Serializable;
 

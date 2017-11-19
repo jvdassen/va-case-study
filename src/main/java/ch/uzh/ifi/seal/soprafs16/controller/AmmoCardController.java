@@ -11,10 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Laurenz on 07/04/16.
- */
-
 @RestController
 public class AmmoCardController  extends GenericService {
 

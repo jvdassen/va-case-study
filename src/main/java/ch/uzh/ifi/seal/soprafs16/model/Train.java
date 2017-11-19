@@ -1,8 +1,5 @@
 package ch.uzh.ifi.seal.soprafs16.model;
 
-/**
- * Created by Laurenz on 13/04/16.
- */
 
 import java.io.Serializable;
 import java.util.ArrayList;

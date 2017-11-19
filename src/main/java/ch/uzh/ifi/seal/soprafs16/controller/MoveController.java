@@ -1,8 +1,5 @@
 package ch.uzh.ifi.seal.soprafs16.controller;
 
-/**
- * Created by Laurenz on 28/04/16.
- */
 import ch.uzh.ifi.seal.soprafs16.model.*;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
 import ch.uzh.ifi.seal.soprafs16.service.FlowService;

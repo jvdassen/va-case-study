@@ -8,9 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * Created by Laurenz on 16/05/16.
- */
 @RestController
 public class SpecialEventController extends GenericService {
 

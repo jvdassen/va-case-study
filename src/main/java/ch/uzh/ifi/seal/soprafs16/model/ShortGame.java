@@ -7,9 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-/**
- * Created by Laurenz on 16/05/16.
- */
 @Entity
 public class ShortGame implements Serializable
 {

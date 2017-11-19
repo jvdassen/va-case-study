@@ -6,7 +6,7 @@ import java.util.Map;
 
 import ch.uzh.ifi.seal.soprafs16.model.ShortGame;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.ShortGameRepository;
-import ch.uzh.ifi.seal.soprafs16.service.AssigningService;
+import ch.uzh.ifi.seal.soprafs16.service.GameObjectInitialization;
 import ch.uzh.ifi.seal.soprafs16.service.CreationService;
 import ch.uzh.ifi.seal.soprafs16.service.ResultService;
 import org.slf4j.Logger;
@@ -43,7 +43,7 @@ public class GameServiceController
     private CreationService creaSer;
 
     @Autowired
-    private AssigningService assSer;
+    private GameObjectInitialization assSer;
 
     @Autowired
     private ResultService resultService;

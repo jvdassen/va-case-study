@@ -11,13 +11,8 @@ import java.util.List;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * Service to assign the already created object to the place they should be when the game starts.
- * Is splitted with creation service for space purposes.
- */
-
-@Service("assigningService")
-public class AssigningService {
+@Service("GameObjectInitialization")
+public class GameObjectInitialization {
 
 
     @Autowired

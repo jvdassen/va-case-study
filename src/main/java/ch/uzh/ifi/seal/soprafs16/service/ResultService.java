@@ -11,9 +11,6 @@ import java.util.List;
 
 import java.util.Map;
 
-/**
- * Created by Laurenz on 24/04/16.
- */
 
 @Service("resultService")
 public class ResultService

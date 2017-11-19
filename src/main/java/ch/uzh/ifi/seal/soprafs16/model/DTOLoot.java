@@ -11,9 +11,6 @@ import javax.persistence.Id;
 
 import ch.uzh.ifi.seal.soprafs16.constant.LootType;
 
-/**
- * Created by Laurenz on 13/05/16.
- */
 
 @Entity
 public class DTOLoot implements Serializable

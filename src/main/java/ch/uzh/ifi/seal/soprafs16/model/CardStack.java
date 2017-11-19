@@ -12,10 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-/**
- * Created by Laurenz on 14/04/16.
- */
-
 @Entity
 public class CardStack implements Serializable {
 

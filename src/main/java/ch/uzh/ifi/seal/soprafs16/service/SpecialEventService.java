@@ -10,12 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * Created by Laurenz on 16/05/16.
- *
- * Isnt nicely implemented but because of the many different accessess, its necessary that these arent implemented in the class.
- */
-
 
 @Service("specialEventService")
 public class SpecialEventService

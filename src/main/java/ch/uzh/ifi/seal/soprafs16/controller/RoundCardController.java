@@ -1,8 +1,5 @@
 package ch.uzh.ifi.seal.soprafs16.controller;
 
-/**
- * Created by Laurenz on 16/04/16.
- */
 import ch.uzh.ifi.seal.soprafs16.model.RoundCard;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.CardStackRepository;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.GameStateRepository;

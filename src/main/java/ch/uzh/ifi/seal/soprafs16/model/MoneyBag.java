@@ -1,8 +1,5 @@
 package ch.uzh.ifi.seal.soprafs16.model;
 
-/**
- * @author Laurenz Shi
- */
 import javax.persistence.Entity;
 
 import ch.uzh.ifi.seal.soprafs16.constant.LootType;

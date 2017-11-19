@@ -1,8 +1,5 @@
 package ch.uzh.ifi.seal.soprafs16.service;
 
-/**
- * Created by Laurenz on 07/04/16.
- */
 
 import ch.uzh.ifi.seal.soprafs16.constant.LootType;
 import ch.uzh.ifi.seal.soprafs16.model.*;

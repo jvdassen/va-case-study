@@ -6,9 +6,6 @@ import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by Laurenz on 24/04/16.
- */
 
 @Service("updateService")
 public class UpdateService {

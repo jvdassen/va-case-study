@@ -1,8 +1,5 @@
 package ch.uzh.ifi.seal.soprafs16.controller;
 
-/**
- * Created by Laurenz on 24/04/16.
- */
 import ch.uzh.ifi.seal.soprafs16.model.ActionCard;
 import ch.uzh.ifi.seal.soprafs16.model.SpecialAbility;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
