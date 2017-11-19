@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ch.uzh.ifi.seal.soprafs16.service.RoundCardCreationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-05-26T17:33:33" hostname="vpn-89-206-119-197.uzh.ch" time="0.079">
+  <properties/>
+  <testcase name="testTrainCreation" classname="ch.uzh.ifi.seal.soprafs16.service.RoundCardCreationTest" time="0.079"/>
+  <system-out><![CDATA[2016-05-26 19:33:33.722  INFO 19231 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ch.uzh.ifi.seal.soprafs16.service.RoundCardCreationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2016-05-26 19:33:33.725  INFO 19231 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-05-26 19:33:33.726  INFO 19231 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@602d3572, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7cd3aa5a, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2cbffefd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@465dc1f4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4fd2eae8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2e321832]
+10
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ch.uzh.ifi.seal.soprafs16.controller.InitializeIT" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-05-26T17:33:26" hostname="vpn-89-206-119-197.uzh.ch" time="5.281">
+  <properties/>
+  <testcase name="testCreateGameSuccess" classname="ch.uzh.ifi.seal.soprafs16.controller.InitializeIT" time="5.281"/>
+  <system-out><![CDATA[19:33:12.149 [Test worker] DEBUG o.s.t.c.j.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class ch.uzh.ifi.seal.soprafs16.controller.InitializeIT]
+19:33:12.162 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+19:33:12.174 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+19:33:12.215 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [ch.uzh.ifi.seal.soprafs16.controller.InitializeIT] from class [org.springframework.test.context.web.WebTestContextBootstrapper]
+19:33:12.271 [Test worker] DEBUG o.s.t.c.w.WebTestContextBootstrapper - Found explicit ContextLoader class [org.springframework.boot.test.SpringApplicationContextLoader] for context configuration attributes [ContextConfigurationAttributes@37f9c947 declaringClass = 'ch.uzh.ifi.seal.soprafs16.controller.InitializeIT', classes = '{class ch.uzh.ifi.seal.soprafs16.Application}', locations = '{}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.boot.test.SpringApplicationContextLoader']
+19:33:12.292 [Test worker] DEBUG o.s.t.c.s.AbstractContextLoader - Did not detect default resource location for test class [ch.uzh.ifi.seal.soprafs16.controller.InitializeIT]: class path resource [ch/uzh/ifi/seal/soprafs16/controller/InitializeIT-context.xml] does not exist
+19:33:12.292 [Test worker] DEBUG o.s.t.c.s.AbstractContextLoader - Did not detect default resource location for test class [ch.uzh.ifi.seal.soprafs16.controller.InitializeIT]: class path resource [ch/uzh/ifi/seal/soprafs16/controller/InitializeITContext.groovy] does not exist
+19:33:12.293 [Test worker] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [ch.uzh.ifi.seal.soprafs16.controller.InitializeIT]: no resource found for suffixes {-context.xml, Context.groovy}.
+19:33:12.299 [Test worker] DEBUG o.s.t.c.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [ch.uzh.ifi.seal.soprafs16.controller.InitializeIT]
+19:33:12.336 [Test worker] INFO  o.s.t.c.w.WebTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.boot.test.IntegrationTestPropertiesListener@716c9a20, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7afab92, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6f0eea3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@128709db, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7af3c31, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7d26f46d]
+19:33:12.344 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [ch.uzh.ifi.seal.soprafs16.controller.InitializeIT]
+19:33:12.345 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [ch.uzh.ifi.seal.soprafs16.controller.InitializeIT]
+19:33:12.348 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [ch.uzh.ifi.seal.soprafs16.controller.InitializeIT]
+19:33:12.348 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [ch.uzh.ifi.seal.soprafs16.controller.InitializeIT]
+19:33:12.353 [Test worker] DEBUG o.s.t.c.s.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@47052f14 testClass = InitializeIT, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@20e10f84 testClass = InitializeIT, locations = '{}', classes = '{class ch.uzh.ifi.seal.soprafs16.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
+19:33:12.354 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [ch.uzh.ifi.seal.soprafs16.controller.InitializeIT]
+19:33:12.355 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [ch.uzh.ifi.seal.soprafs16.controller.InitializeIT]
+19:33:12.362 [Test worker] DEBUG o.s.test.util.ReflectionTestUtils - Getting field 'mergedContextConfiguration' from target object [[DefaultTestContext@47052f14 testClass = InitializeIT, testInstance = ch.uzh.ifi.seal.soprafs16.controller.InitializeIT@4fffba69, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@20e10f84 testClass = InitializeIT, locations = '{}', classes = '{class ch.uzh.ifi.seal.soprafs16.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]]] or target class [class org.springframework.test.context.support.DefaultTestContext]
+19:33:12.364 [Test worker] DEBUG o.s.test.util.ReflectionTestUtils - Setting field 'propertySourceProperties' of type [null] on target object [[WebMergedContextConfiguration@20e10f84 testClass = InitializeIT, locations = '{}', classes = '{class ch.uzh.ifi.seal.soprafs16.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]] or target class [class org.springframework.test.context.web.WebMergedContextConfiguration] to value [[Ljava.lang.String;@780bbb57]
+19:33:12.365 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@47052f14 testClass = InitializeIT, testInstance = ch.uzh.ifi.seal.soprafs16.controller.InitializeIT@4fffba69, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@20e10f84 testClass = InitializeIT, locations = '{}', classes = '{class ch.uzh.ifi.seal.soprafs16.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{server.port=0, org.springframework.boot.test.IntegrationTest=true}', resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]]].
+19:33:12.593 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+19:33:12.597 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+19:33:12.597 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+19:33:12.600 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [integrationTest] PropertySource with search precedence immediately lower than [systemEnvironment]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.3.3.RELEASE)
+
+2016-05-26 19:33:13.453  INFO 19231 --- [    Test worker] c.u.i.s.s.controller.InitializeIT        : Starting InitializeIT on vpn-89-206-119-197.uzh.ch with PID 19231 (/Users/Jan/sopra-fs16-group2-server/build/classes/test started by Jan in /Users/Jan/sopra-fs16-group2-server)
+2016-05-26 19:33:13.454  INFO 19231 --- [    Test worker] c.u.i.s.s.controller.InitializeIT        : No active profile set, falling back to default profiles: default
+2016-05-26 19:33:13.540  INFO 19231 --- [    Test worker] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6648179e: startup date [Thu May 26 19:33:13 CEST 2016]; root of context hierarchy
+2016-05-26 19:33:15.629  INFO 19231 --- [    Test worker] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2016-05-26 19:33:16.789  INFO 19231 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$11fb005] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-05-26 19:33:18.155  INFO 19231 --- [    Test worker] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 0 (http)
+2016-05-26 19:33:18.193  INFO 19231 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-05-26 19:33:18.196  INFO 19231 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.32
+2016-05-26 19:33:18.495  INFO 19231 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-05-26 19:33:18.496  INFO 19231 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4961 ms
+2016-05-26 19:33:19.115  INFO 19231 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2016-05-26 19:33:19.124  INFO 19231 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-05-26 19:33:19.125  INFO 19231 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-05-26 19:33:19.126  INFO 19231 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-05-26 19:33:19.127  INFO 19231 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'requestContextFilter' to: [/*]
+2016-05-26 19:33:20.261  INFO 19231 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2016-05-26 19:33:20.290  INFO 19231 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-05-26 19:33:20.527  INFO 19231 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate Core {4.3.11.Final}
+2016-05-26 19:33:20.531  INFO 19231 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2016-05-26 19:33:20.536  INFO 19231 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2016-05-26 19:33:21.140  INFO 19231 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-05-26 19:33:21.426  INFO 19231 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2016-05-26 19:33:21.940  INFO 19231 --- [    Test worker] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory
+2016-05-26 19:33:23.308  INFO 19231 --- [    Test worker] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2016-05-26 19:33:23.561  INFO 19231 --- [    Test worker] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2016-05-26 19:33:25.177  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6648179e: startup date [Thu May 26 19:33:13 CEST 2016]; root of context hierarchy
+2016-05-26 19:33:25.350  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/actioncards],methods=[GET]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.ActionCard> ch.uzh.ifi.seal.soprafs16.controller.ActionCardController.listActionCards()
+2016-05-26 19:33:25.352  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/actioncards/{gameId}/draw],methods=[POST]}" onto public void ch.uzh.ifi.seal.soprafs16.controller.ActionCardController.drawActionCard(long)
+2016-05-26 19:33:25.353  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/actioncards/{gameId}/{userId}],methods=[POST]}" onto public void ch.uzh.ifi.seal.soprafs16.controller.ActionCardController.addActionCard(ch.uzh.ifi.seal.soprafs16.model.ActionCard,long,long)
+2016-05-26 19:33:25.354  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/actioncards/{gameId}/played],methods=[GET]}" onto public ch.uzh.ifi.seal.soprafs16.model.ActionCard ch.uzh.ifi.seal.soprafs16.controller.ActionCardController.getPlayedCard(long)
+2016-05-26 19:33:25.354  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/actioncards/{gameId}],methods=[GET]}" onto public ch.uzh.ifi.seal.soprafs16.model.ActionCard ch.uzh.ifi.seal.soprafs16.controller.ActionCardController.getCurrentCard(long)
+2016-05-26 19:33:25.356  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/ammocards],methods=[GET]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.AmmoCard> ch.uzh.ifi.seal.soprafs16.controller.AmmoCardController.listAmmoCards()
+2016-05-26 19:33:25.357  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/ammocards],methods=[POST]}" onto public ch.uzh.ifi.seal.soprafs16.model.AmmoCard ch.uzh.ifi.seal.soprafs16.controller.AmmoCardController.addAmmoCard()
+2016-05-26 19:33:25.357  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/ammocards/{gameId}],methods=[GET]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.AmmoCard> ch.uzh.ifi.seal.soprafs16.controller.AmmoCardController.getAmmoCards(long)
+2016-05-26 19:33:25.360  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/characters],methods=[GET]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.Character> ch.uzh.ifi.seal.soprafs16.controller.CharacterController.listCharacters()
+2016-05-26 19:33:25.361  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/characters/free/{gameId}],methods=[GET]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.Character> ch.uzh.ifi.seal.soprafs16.controller.CharacterController.listFreeCharacters(java.lang.Long)
+2016-05-26 19:33:25.362  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/characters/{gameId}/{userId}],methods=[POST]}" onto public void ch.uzh.ifi.seal.soprafs16.controller.CharacterController.assignCharacter(java.lang.Long,java.lang.Long,ch.uzh.ifi.seal.soprafs16.model.Character)
+2016-05-26 19:33:25.363  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/characters/stacks],methods=[GET]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.CardStack> ch.uzh.ifi.seal.soprafs16.controller.CharacterController.listStack()
+2016-05-26 19:33:25.374  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{gameId}/stop],methods=[GET]}" onto public java.util.Map<java.lang.Long, java.lang.Integer> ch.uzh.ifi.seal.soprafs16.controller.GameServiceController.stopGame(java.lang.Long)
+2016-05-26 19:33:25.375  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.Game> ch.uzh.ifi.seal.soprafs16.controller.GameServiceController.listGames()
+2016-05-26 19:33:25.376  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{gameId}/short]}" onto public void ch.uzh.ifi.seal.soprafs16.controller.GameServiceController.isShortGame(java.lang.Long)
+2016-05-26 19:33:25.377  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{gameId}/shorts]}" onto public ch.uzh.ifi.seal.soprafs16.model.ShortGame ch.uzh.ifi.seal.soprafs16.controller.GameServiceController.getShortGame(java.lang.Long)
+2016-05-26 19:33:25.378  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games],methods=[POST]}" onto public long ch.uzh.ifi.seal.soprafs16.controller.GameServiceController.addGame(ch.uzh.ifi.seal.soprafs16.model.Game,java.lang.String)
+2016-05-26 19:33:25.379  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{gameId}]}" onto public ch.uzh.ifi.seal.soprafs16.model.Game ch.uzh.ifi.seal.soprafs16.controller.GameServiceController.getGame(java.lang.Long)
+2016-05-26 19:33:25.379  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{gameId}/start],methods=[POST]}" onto public void ch.uzh.ifi.seal.soprafs16.controller.GameServiceController.startGame(java.lang.Long,java.lang.String)
+2016-05-26 19:33:25.380  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{gameId}/players]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.User> ch.uzh.ifi.seal.soprafs16.controller.GameServiceController.listPlayers(java.lang.Long)
+2016-05-26 19:33:25.381  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{gameId}/players],methods=[POST]}" onto public long ch.uzh.ifi.seal.soprafs16.controller.GameServiceController.addPlayer(java.lang.Long,java.lang.String)
+2016-05-26 19:33:25.381  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{gameId}/players/{playerId}]}" onto public ch.uzh.ifi.seal.soprafs16.model.User ch.uzh.ifi.seal.soprafs16.controller.GameServiceController.getPlayer(java.lang.Long,java.lang.Integer)
+2016-05-26 19:33:25.383  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/gamestates],methods=[GET]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.GameState> ch.uzh.ifi.seal.soprafs16.controller.GameStateController.listGameStates()
+2016-05-26 19:33:25.384  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/gamestates/{gameId}],methods=[GET]}" onto public ch.uzh.ifi.seal.soprafs16.model.GameState ch.uzh.ifi.seal.soprafs16.controller.GameStateController.getGameState(long)
+2016-05-26 19:33:25.386  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto public java.lang.String ch.uzh.ifi.seal.soprafs16.controller.IndexController.index()
+2016-05-26 19:33:25.389  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loot/{gameId}/{userId}/username]}" onto public java.lang.String ch.uzh.ifi.seal.soprafs16.controller.LootController.getUsername(long,long)
+2016-05-26 19:33:25.389  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loot/{gameId}/{userId}]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.Loot> ch.uzh.ifi.seal.soprafs16.controller.LootController.getLootOfUser(long,long)
+2016-05-26 19:33:25.390  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loot]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.Loot> ch.uzh.ifi.seal.soprafs16.controller.LootController.listLoot()
+2016-05-26 19:33:25.391  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loot/{gameId}]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.Loot> ch.uzh.ifi.seal.soprafs16.controller.LootController.getLootOfGame(long)
+2016-05-26 19:33:25.395  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/moves/{gameId}/{userId}/climb],methods=[POST]}" onto public void ch.uzh.ifi.seal.soprafs16.controller.MoveController.addClimb(long,long,ch.uzh.ifi.seal.soprafs16.model.DTOClimb)
+2016-05-26 19:33:25.396  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/moves/{gameId}/{userId}],methods=[GET]}" onto public ch.uzh.ifi.seal.soprafs16.model.Move ch.uzh.ifi.seal.soprafs16.controller.MoveController.getLastMove(long,long)
+2016-05-26 19:33:25.396  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/moves/{gameId}/{userId}/move],methods=[POST]}" onto public void ch.uzh.ifi.seal.soprafs16.controller.MoveController.addMove(long,long,ch.uzh.ifi.seal.soprafs16.model.DTOMove)
+2016-05-26 19:33:25.397  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/moves/{gameId}/{userId}/shoot],methods=[POST]}" onto public void ch.uzh.ifi.seal.soprafs16.controller.MoveController.addShoot(long,long,ch.uzh.ifi.seal.soprafs16.model.DTOShoot)
+2016-05-26 19:33:25.399  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/moves/{gameId}/{userId}/punch],methods=[POST]}" onto public void ch.uzh.ifi.seal.soprafs16.controller.MoveController.addPunch(long,long,ch.uzh.ifi.seal.soprafs16.model.DTOPunch)
+2016-05-26 19:33:25.400  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/moves/{gameId}/{userId}/marshal],methods=[POST]}" onto public void ch.uzh.ifi.seal.soprafs16.controller.MoveController.addMarshal(long,long,ch.uzh.ifi.seal.soprafs16.model.DTOMarshal)
+2016-05-26 19:33:25.401  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/moves/{gameId}/{userId}/invalid],methods=[POST]}" onto public void ch.uzh.ifi.seal.soprafs16.controller.MoveController.addInvalid(long,long,ch.uzh.ifi.seal.soprafs16.model.DTOInvalid)
+2016-05-26 19:33:25.401  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/moves/{gameId}/{userId}/rob],methods=[POST]}" onto public void ch.uzh.ifi.seal.soprafs16.controller.MoveController.addRob(long,long,ch.uzh.ifi.seal.soprafs16.model.DTORob)
+2016-05-26 19:33:25.403  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roundcards],methods=[GET]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.RoundCard> ch.uzh.ifi.seal.soprafs16.controller.RoundCardController.listRoundCards()
+2016-05-26 19:33:25.404  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roundcards/{gameId}],methods=[GET]}" onto public ch.uzh.ifi.seal.soprafs16.model.RoundCard ch.uzh.ifi.seal.soprafs16.controller.RoundCardController.getCurrentRoundCards(java.lang.Long)
+2016-05-26 19:33:25.406  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/specialevent/{gameId}/{userId}],methods=[GET]}" onto public ch.uzh.ifi.seal.soprafs16.model.DTOSpecialEvent ch.uzh.ifi.seal.soprafs16.controller.SpecialEventController.getLastSpecialEvent(long,long)
+2016-05-26 19:33:25.408  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/trains]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.Train> ch.uzh.ifi.seal.soprafs16.controller.TrainController.listTrains()
+2016-05-26 19:33:25.409  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/trains/{gameId}]}" onto public ch.uzh.ifi.seal.soprafs16.model.Train ch.uzh.ifi.seal.soprafs16.controller.TrainController.getTrain(long)
+2016-05-26 19:33:25.412  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/{userId}],methods=[GET]}" onto public ch.uzh.ifi.seal.soprafs16.model.User ch.uzh.ifi.seal.soprafs16.controller.UserServiceController.getUser(java.lang.Long)
+2016-05-26 19:33:25.415  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public java.util.List<ch.uzh.ifi.seal.soprafs16.model.User> ch.uzh.ifi.seal.soprafs16.controller.UserServiceController.listUsers()
+2016-05-26 19:33:25.415  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[POST]}" onto public ch.uzh.ifi.seal.soprafs16.model.User ch.uzh.ifi.seal.soprafs16.controller.UserServiceController.addUser(ch.uzh.ifi.seal.soprafs16.model.User)
+2016-05-26 19:33:25.420  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-05-26 19:33:25.421  INFO 19231 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-05-26 19:33:25.469  INFO 19231 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-05-26 19:33:25.469  INFO 19231 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-05-26 19:33:25.539  INFO 19231 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-05-26 19:33:25.975  INFO 19231 --- [    Test worker] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 54577 (http)
+2016-05-26 19:33:25.987  INFO 19231 --- [    Test worker] c.u.i.s.s.controller.InitializeIT        : Started InitializeIT in 13.366 seconds (JVM running for 15.96)
+2016-05-26 19:33:26.239  INFO 19231 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-05-26 19:33:26.240  INFO 19231 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-05-26 19:33:26.266  INFO 19231 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+2016-05-26 19:33:27.804 ERROR 19231 --- [o-auto-1-exec-1] c.u.i.s.s.c.GameServiceController        : Error adding player with token: 
+2016-05-26 19:33:27.820 ERROR 19231 --- [o-auto-1-exec-3] c.u.i.s.s.c.GameServiceController        : Error adding player with token: 72c4d5d5-5be2-4d71-a88e-c52af50528e2
+2016-05-26 19:33:29.740 ERROR 19231 --- [o-auto-1-exec-6] c.u.i.s.s.controller.GenericService      : 
+
+java.lang.NullPointerException: null
+	at ch.uzh.ifi.seal.soprafs16.service.UpdateService.updatePhase(UpdateService.java:119) ~[main/:na]
+	at ch.uzh.ifi.seal.soprafs16.service.FlowService.checkActionFinished(FlowService.java:103) ~[main/:na]
+	at ch.uzh.ifi.seal.soprafs16.controller.MoveController.getLastMove(MoveController.java:67) ~[main/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_73]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_73]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_73]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_73]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221) ~[spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) ~[spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:817) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:731) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:859) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:618) [tomcat-servlet-api-8.0.20.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725) [tomcat-servlet-api-8.0.20.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:87) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:121) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_73]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_73]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_73]
+
+2016-05-26 19:33:29.841 ERROR 19231 --- [-auto-1-exec-10] c.u.i.s.s.controller.GenericService      : 
+
+java.lang.NullPointerException: null
+	at ch.uzh.ifi.seal.soprafs16.service.UpdateService.updateActionPhase(UpdateService.java:137) ~[main/:na]
+	at ch.uzh.ifi.seal.soprafs16.service.FlowService.checkActionFinished(FlowService.java:107) ~[main/:na]
+	at ch.uzh.ifi.seal.soprafs16.controller.MoveController.getLastMove(MoveController.java:67) ~[main/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_73]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_73]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_73]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_73]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221) ~[spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) ~[spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:817) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:731) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:859) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:618) [tomcat-servlet-api-8.0.20.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725) [tomcat-servlet-api-8.0.20.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:87) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:121) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_73]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_73]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_73]
+
+xxxxxxxxxxxxxxxxxxxxstable
+2016-05-26 19:33:30.291 ERROR 19231 --- [o-auto-1-exec-6] c.u.i.s.s.controller.GenericService      : 
+
+java.lang.NullPointerException: null
+	at ch.uzh.ifi.seal.soprafs16.service.AbilityService.checkForAbility(AbilityService.java:93) ~[main/:na]
+	at ch.uzh.ifi.seal.soprafs16.service.PostService.applyMove(PostService.java:261) ~[main/:na]
+	at ch.uzh.ifi.seal.soprafs16.service.PostService.addMoveToStack(PostService.java:78) ~[main/:na]
+	at ch.uzh.ifi.seal.soprafs16.controller.MoveController.addPunch(MoveController.java:109) ~[main/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_73]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_73]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_73]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_73]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221) ~[spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) ~[spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:817) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:731) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:870) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:644) [tomcat-servlet-api-8.0.20.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725) [tomcat-servlet-api-8.0.20.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:87) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:121) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_73]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_73]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_73]
+
+xxxxxxxxxxxxxxxxxxxxstable
+2016-05-26 19:33:30.323 ERROR 19231 --- [o-auto-1-exec-7] c.u.i.s.s.controller.GenericService      : 
+
+org.springframework.dao.InvalidDataAccessApiUsageException: The entity must not be null!; nested exception is java.lang.IllegalArgumentException: The entity must not be null!
+	at org.springframework.orm.jpa.EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible(EntityManagerFactoryUtils.java:384) ~[spring-orm-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:227) ~[spring-orm-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:436) ~[spring-orm-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:59) ~[spring-tx-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:213) ~[spring-tx-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:147) ~[spring-tx-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:131) ~[spring-data-jpa-1.9.4.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:208) ~[spring-aop-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at com.sun.proxy.$Proxy110.delete(Unknown Source) ~[na:na]
+	at ch.uzh.ifi.seal.soprafs16.controller.SpecialEventController.getLastSpecialEvent(SpecialEventController.java:62) ~[main/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_73]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_73]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_73]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_73]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221) ~[spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) ~[spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:817) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:731) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:859) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:618) [tomcat-servlet-api-8.0.20.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725) [tomcat-servlet-api-8.0.20.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:87) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:121) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_73]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_73]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_73]
+Caused by: java.lang.IllegalArgumentException: The entity must not be null!
+	at org.springframework.util.Assert.notNull(Assert.java:115) ~[spring-core-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.delete(SimpleJpaRepository.java:161) ~[spring-data-jpa-1.9.4.RELEASE.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_73]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_73]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_73]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_73]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.executeMethodOn(RepositoryFactorySupport.java:483) ~[spring-data-commons-1.11.4.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:468) ~[spring-data-commons-1.11.4.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:440) ~[spring-data-commons-1.11.4.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:61) ~[spring-data-commons-1.11.4.RELEASE.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99) ~[spring-tx-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281) ~[spring-tx-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) ~[spring-tx-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	... 61 common frames omitted
+
+2016-05-26 19:33:30.420 ERROR 19231 --- [o-auto-1-exec-2] c.u.i.s.s.controller.GenericService      : 
+
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653) ~[na:1.8.0_73]
+	at java.util.ArrayList.get(ArrayList.java:429) ~[na:1.8.0_73]
+	at ch.uzh.ifi.seal.soprafs16.controller.TrainController.getTrain(TrainController.java:49) ~[main/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_73]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_73]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_73]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_73]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221) ~[spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) ~[spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:817) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:731) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:859) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:618) [tomcat-servlet-api-8.0.20.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844) [spring-webmvc-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725) [tomcat-servlet-api-8.0.20.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:87) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:121) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_73]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_73]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.32.jar:8.0.32]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_73]
+
+<<<<<<<<<<<<<<
+<<<<<<<<<<<<<<
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ch.uzh.ifi.seal.soprafs16.service.ExampleServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-05-26T17:33:33" hostname="vpn-89-206-119-197.uzh.ch" time="0.008">
+  <properties/>
+  <testcase name="testDoLogic" classname="ch.uzh.ifi.seal.soprafs16.service.ExampleServiceTest" time="0.008"/>
+  <system-out><![CDATA[2016-05-26 19:33:33.628  INFO 19231 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ch.uzh.ifi.seal.soprafs16.service.ExampleServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2016-05-26 19:33:33.630  INFO 19231 --- [    Test worker] o.s.t.c.web.WebTestContextBootstrapper   : Using TestExecutionListeners: [org.springframework.boot.test.IntegrationTestPropertiesListener@3abf6cb8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@42657e6e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5cbe2ee, org.springframework.test.context.support.DirtiesContextTestExecutionListener@56edbb05, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1776d7cc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7e095d42]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

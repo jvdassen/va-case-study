@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ch.uzh.ifi.seal.soprafs16.model.DTORobTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-05-26T17:33:31" hostname="vpn-89-206-119-197.uzh.ch" time="0.0">
+  <properties/>
+  <testcase name="test" classname="ch.uzh.ifi.seal.soprafs16.model.DTORobTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

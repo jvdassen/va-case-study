@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ch.uzh.ifi.seal.soprafs16.service.LootCreationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-05-26T17:33:33" hostname="vpn-89-206-119-197.uzh.ch" time="0.064">
+  <properties/>
+  <testcase name="test" classname="ch.uzh.ifi.seal.soprafs16.service.LootCreationTest" time="0.064"/>
+  <system-out><![CDATA[2016-05-26 19:33:33.648  INFO 19231 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ch.uzh.ifi.seal.soprafs16.service.LootCreationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2016-05-26 19:33:33.650  INFO 19231 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-05-26 19:33:33.650  INFO 19231 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@22989851, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@453afcf8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@691dae05, org.springframework.test.context.support.DirtiesContextTestExecutionListener@772c3a22, org.springframework.test.context.transaction.TransactionalTestExecutionListener@11106e86, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@35f9d60]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
