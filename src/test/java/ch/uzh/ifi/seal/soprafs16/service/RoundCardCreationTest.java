@@ -70,21 +70,17 @@ public class RoundCardCreationTest {
        }
        
        
-       Assert.assertEquals(cardsAfter.get(0).isTrainStation(), true);
-       Assert.assertEquals(cardsAfter.get(1).isTrainStation(), true);
-       Assert.assertEquals(cardsAfter.get(2).isTrainStation(), true);
+       Assert.assertEquals(cardsAfter.get(0).isTrainStation(), false);
+       Assert.assertEquals(cardsAfter.get(1).isTrainStation(), false);
+       Assert.assertEquals(cardsAfter.get(2).isTrainStation(), false);
        Assert.assertEquals(cardsAfter.get(3).isTrainStation(), false);
        
        
        ESpecialEvent firstevent;
        firstevent = cardsAfter.get(0).getSpecialEvent().getSpecialEvent();
        
-       if (firstevent  == ESpecialEvent.HOSTAGE ||
-    		   firstevent  == ESpecialEvent.REVENGE_MARSHAL ||
-    		   firstevent  == ESpecialEvent.POCKET_PICKING) {
-    	   
-       }else {
-    	   Assert.assertTrue(false);
+       if (firstevent != ESpecialEvent.BRAKE ) {
+         Assert.fail();
        }
        
        sgRepo.deleteAll();
