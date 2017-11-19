@@ -11,12 +11,8 @@ import java.util.List;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * Class to check if an ability should happen.
- */
-
 @Service("abilityService")
-public class AbilityService {
+public class AbilityCheck {
 
 
     @Autowired
@@ -52,10 +48,7 @@ public class AbilityService {
     @Autowired
     private GameStateRepository gameStateRepo;
 
-    /*  checks if the situation is right for ghosts ability to happen
-
-     */
-    public boolean checkForAbility(long gameId, long userId) {
+    public boolean hasSpecialAbility(long gameId, long userId) {
         if (charRepo.findFirstByUserId(userId).getCharacter().equals(ECharacter.GHOST) && gameStateRepo.findByGameId(gameId).getRound().getCurrentTurn() == 1)
         {
             return true;
@@ -63,8 +56,7 @@ public class AbilityService {
         return false;
     }
 
-    /* Checks if the situation is right for Djangos or Cheyennes ability to happen.*/
-    public boolean checkForAbility(long gameId, long userId, Move move) {
+    public boolean hasSpecialAbility(long gameId, long userId, Move move) {
         switch (charRepo.findFirstByUserId(userId).getCharacter())
         {
             case DJANGO:

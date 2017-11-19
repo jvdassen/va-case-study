@@ -57,7 +57,7 @@ public class PostService {
 
     @Autowired
 
-    private AbilityService abilityService;
+    private AbilityCheck abilityService;
 
     /*Adds an actioncard to the stack.*/
     public void addActionCardToStack(long gameId, ActionCard actionCard) {
@@ -148,7 +148,7 @@ public class PostService {
         {
             AmmoCard marshalAmmoCard = new AmmoCard();
             boolean walkedIntoMarshal = false;
-            if (abilityService.checkForAbility(gameId,move.getUserId(), move))
+            if (abilityService.hasSpecialAbility(gameId,move.getUserId(), move))
             {
                 boolean left = false;
                 if (train.findUserInTrain(move.getUserId())>train.findUserInTrain(((DTOShoot) move).getVictim().getId()))
@@ -258,7 +258,7 @@ public class PostService {
         else if (move instanceof DTOPunch)
         {
             boolean foundNothing = true;
-            if (abilityService.checkForAbility(gameId,move.getUserId(), move))
+            if (abilityService.hasSpecialAbility(gameId,move.getUserId(), move))
             {
                 List<Loot> loots = lootRepo.findByUserId((((DTOPunch) move).getVictim().getId()));
                 List<Loot> lootr = new ArrayList<Loot>();

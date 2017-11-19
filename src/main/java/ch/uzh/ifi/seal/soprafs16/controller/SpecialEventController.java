@@ -5,7 +5,7 @@ import ch.uzh.ifi.seal.soprafs16.model.DTOSpecialEvent;
 import ch.uzh.ifi.seal.soprafs16.model.Move;
 import ch.uzh.ifi.seal.soprafs16.model.SpecialEvent;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
-import ch.uzh.ifi.seal.soprafs16.service.AbilityService;
+import ch.uzh.ifi.seal.soprafs16.service.AbilityCheck;
 import ch.uzh.ifi.seal.soprafs16.service.FlowService;
 import ch.uzh.ifi.seal.soprafs16.service.PostService;
 import ch.uzh.ifi.seal.soprafs16.service.UpdateService;

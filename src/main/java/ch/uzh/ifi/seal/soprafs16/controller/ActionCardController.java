@@ -7,7 +7,7 @@ import ch.uzh.ifi.seal.soprafs16.model.ActionCard;
 import ch.uzh.ifi.seal.soprafs16.model.SpecialAbility;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
 
-import ch.uzh.ifi.seal.soprafs16.service.AbilityService;
+import ch.uzh.ifi.seal.soprafs16.service.AbilityCheck;
 import ch.uzh.ifi.seal.soprafs16.service.PostService;
 import ch.uzh.ifi.seal.soprafs16.service.UpdateService;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,13 +34,10 @@ public class ActionCardController extends GenericService {
     private PostService postService;
 
     @Autowired
-    private AbilityService abilityService;
+    private AbilityCheck abilityService;
 
     @Autowired
     private CharacterRepository charRepo;
-
-    @Autowired
-    private GameStateRepository gameStateRepo;
 
     @Autowired
     private CardStackRepository csRepo;
@@ -85,7 +82,7 @@ public class ActionCardController extends GenericService {
             }
         }
 
-        if (abilityService.checkForAbility(gameId, userId))
+        if (abilityService.hasSpecialAbility(gameId, userId))
         {
             SpecialAbility sa = charRepo.findFirstByUserId(userId).getSpecialAbility();
             sa.doAbility(actionCard);

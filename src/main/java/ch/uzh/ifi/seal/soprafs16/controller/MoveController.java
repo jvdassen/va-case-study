@@ -6,7 +6,7 @@ package ch.uzh.ifi.seal.soprafs16.controller;
 import ch.uzh.ifi.seal.soprafs16.model.*;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
 
-import ch.uzh.ifi.seal.soprafs16.service.AbilityService;
+import ch.uzh.ifi.seal.soprafs16.service.AbilityCheck;
 import ch.uzh.ifi.seal.soprafs16.service.FlowService;
 import ch.uzh.ifi.seal.soprafs16.service.PostService;
 import ch.uzh.ifi.seal.soprafs16.service.UpdateService;
@@ -31,7 +31,7 @@ public class MoveController extends GenericService {
     private PostService postService;
 
     @Autowired
-    private AbilityService abilityService;
+    private AbilityCheck abilityService;
 
     @Autowired
     private CharacterRepository charRepo;
