@@ -294,8 +294,10 @@ public class PostService {
                 List<Loot> loots = lootRepo.findByUserId((((DTOPunch) moveToApply).getVictim().getId()));
                 List<Loot> resultingLoot = new ArrayList<Loot>();
                 for (Loot loot : loots) {
-                    if (loot.getValue() == ((DTOPunch) moveToApply).getDTOLoot().getValue() && loot.getLootType() == ((DTOPunch) moveToApply).getDTOLoot().getLootType())
-                        lootr.add(loot);
+                	boolean matchingLootTypeAndValue = 	loot.getValue() == ((DTOPunch) moveToApply).getDTOLoot().getValue() &&
+                										loot.getLootType() == ((DTOPunch) moveToApply).getDTOLoot().getLootType();
+                    if (matchingLootTypeAndValue)
+                        resultingLoot.add(loot);
                         loot.setUserId(0);
                         completeTrain.getWagons().get(completeTrain.findUserInTrain(moveToApply.getUserId())/2).getTrainLevels().get(completeTrain.findUserInTrain(moveToApply.getUserId())%2).addLoot(loot);
                         lootRepo.save(loot);
