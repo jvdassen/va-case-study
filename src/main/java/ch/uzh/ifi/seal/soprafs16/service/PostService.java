@@ -54,7 +54,7 @@ public class PostService {
 
     @Autowired
     private UserRepository userRepo;
-   
+
     @Autowired
     private ActionCardRepository actionCardRepo;
 
@@ -94,7 +94,7 @@ public class PostService {
     public void addMoveToStack(long gameId, Move move)
     {
         List<Move> movesAfterMoveWasExecuted = applyMove(gameId, move);
-        
+
         CardStack playedCards = allCards.findByGameId(gameId).get(0);
         for (Move executedMove : movesAfterMoveWasExecuted) {
         	playedCards.addMove(executedMove);
@@ -111,14 +111,14 @@ public class PostService {
         CardStack cardStack = allCards.findByGameId(gameId).get(0);
         List<User> players = gameRepo.findOne(gameId).getPlayers();
         List<Move> allResultingMoves = new ArrayList<Move>();
-        
+
         int marshalPosition = completeTrain.findMarshal();
         TrainWagon trainWagonWithMarshal = completeTrain.getWagons().get(marshalPosition);
         TrainLevel trainLevelWithMarshal = trainWagonWithMarshal.getTrainLevels().get(0);
-        
+
         long movingUser = moveToApply.getUserId();
         long victim = ((DTOShoot) moveToApply).getVictim().getId();
-                
+
         int movingUserPosition = completeTrain.findUserInTrain(movingUser);
         int victimPosition = completeTrain.findUserInTrain(victim);
 
@@ -313,7 +313,7 @@ public class PostService {
                 for (Loot loot : loots) {
                 	boolean matchingLootTypeAndValue = 	loot.getValue() == ((DTOPunch) moveToApply).getDTOLoot().getValue() &&
                 										loot.getLootType() == ((DTOPunch) moveToApply).getDTOLoot().getLootType();
-                	
+
                     if (matchingLootTypeAndValue)
                         resultingLoot.add(loot);
                         loot.setUserId(0);
@@ -408,21 +408,21 @@ public class PostService {
         } else if (moveToApply instanceof DTOMarshal) {
             completeTrain.moveMarshal(((DTOMarshal) moveToApply).isLeft());
             List<AmmoCard> ammoCardsAfterMove = new ArrayList<AmmoCard>();
-            
+
             List<Character> affectedCharacters = trainLevelWithMarshal.getCharacters();
 
             for (int i = 0; i < affectedCharacters.size(); i++) {
                 if (cardStack.getAmmoCard() != null) {
                     AmmoCard ammoCard = cardStack.getAmmoCard();
                     cardStack.removeLastAmmoCard();
-                    
+
                     ammoCard.setVictim(affectedCharacters.get(i).getUserId());
                     ammoCardsAfterMove.add(ammoCard);
                     allCards.save(cardStack);
                     ammoCardRepo.save(ammoCard);
                 }
             }
-              
+
             completeTrain.removeFleeFromMarshal(affectedCharacters);
             trainRepo.save(completeTrain);
             completeTrain.addFleeFromMarshal(affectedCharacters);
@@ -464,7 +464,7 @@ public class PostService {
                     allCards.save(cardStack);
                     ammoCardRepo.save(ammoCard);
                 }
-                
+
                 Character character = completeTrain.getCharacterInTrain(movingUser);
                 completeTrain.removeCharacterInTrain(movingUser);
                 trainRepo.save(completeTrain);
