@@ -1,8 +1,15 @@
 package ch.uzh.ifi.seal.soprafs16.service;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import ch.uzh.ifi.seal.soprafs16.constant.ETurn;
-import ch.uzh.ifi.seal.soprafs16.model.*;
 import ch.uzh.ifi.seal.soprafs16.model.Character;
+import ch.uzh.ifi.seal.soprafs16.model.User;
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTOClimb;
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTOInvalid;
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTOMarshal;
@@ -20,14 +27,16 @@ import ch.uzh.ifi.seal.soprafs16.model.gamecard.CardStack;
 import ch.uzh.ifi.seal.soprafs16.model.gamecard.RoundCard;
 import ch.uzh.ifi.seal.soprafs16.model.lootobject.Loot;
 import ch.uzh.ifi.seal.soprafs16.model.lootobject.MoneyBag;
-import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import java.util.concurrent.ThreadLocalRandom;
+import ch.uzh.ifi.seal.soprafs16.model.repositories.ActionCardRepository;
+import ch.uzh.ifi.seal.soprafs16.model.repositories.AmmoCardRepository;
+import ch.uzh.ifi.seal.soprafs16.model.repositories.CardStackRepository;
+import ch.uzh.ifi.seal.soprafs16.model.repositories.CharacterRepository;
+import ch.uzh.ifi.seal.soprafs16.model.repositories.GameRepository;
+import ch.uzh.ifi.seal.soprafs16.model.repositories.GameStateRepository;
+import ch.uzh.ifi.seal.soprafs16.model.repositories.LootRepository;
+import ch.uzh.ifi.seal.soprafs16.model.repositories.MoveRepository;
+import ch.uzh.ifi.seal.soprafs16.model.repositories.TrainRepository;
+import ch.uzh.ifi.seal.soprafs16.model.repositories.UserRepository;
 
 
 @Service("postService")
@@ -302,13 +311,13 @@ public class PostService {
                     if (matchingLootTypeAndValue)
                         resultingLoot.add(loot);
                         loot.setUserId(0);
-                        
+
                         int targetUserPosition = completeTrain.findUserInTrain(moveToApply.getUserId())/2;
                         TrainWagon targetTrainWagon = completeTrain.getWagons().get(targetUserPosition);
                         TrainLevel targetTrainLevel = targetTrainWagon.getTrainLevels().get(targetUserPosition);
-                        		
+
                         targetTrainLevel.addLoot(loot);
-                        
+
                         lootRepo.save(loot);
                         trainRepo.save(completeTrain);
                         allCards.save(cardStack);
