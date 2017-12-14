@@ -43,7 +43,7 @@ public class PostService {
 
     @Autowired
     private UserRepository userRepo;
-
+   
     @Autowired
     private ActionCardRepository actionCardRepo;
 
@@ -68,14 +68,14 @@ public class PostService {
 
     /*Adds an actioncard to the stack.*/
     public void addActionCardToStack(long gameId, ActionCard actionCard) {
-        List<CardStack> cs = allCards.findByGameId(gameId);
+        List<CardStack> cardStack = allCards.findByGameId(gameId);
         // Check if cards should be visible
         RoundCard rc = allCards.findByGameId(gameId).get(0).getCurrentRoundCard(gameStateRepo.findByGameId(gameId).getRound());
         if (rc.getTurns().get(rc.getCurrentTurn()).equals(ETurn.TUNNEL)) {
             actionCard.setVisible(false);
         }
-        cs.get(0).addActionCardToStack(actionCard);
-        allCards.save(cs);
+        cardStack.get(0).addActionCardToStack(actionCard);
+        allCards.save(cardStack);
         actionCardRepo.save(actionCard);
     }
 
@@ -95,89 +95,86 @@ public class PostService {
     /* Apply the consequences of the move onto the game
         @param move: The move the client has posted.
     */
-    public List<Move> applyMove(long gameId, Move move) {
-        Train train = trainRepo.findByGameId(gameId).get(0);
-        CardStack cs = allCards.findByGameId(gameId).get(0);
+    public List<Move> applyMove(long gameId, Move moveToApply) {
+        Train completeTrain = trainRepo.findByGameId(gameId).get(0);
+        CardStack cardStack = allCards.findByGameId(gameId).get(0);
         List<User> players = gameRepo.findOne(gameId).getPlayers();
-        List<Move> moves = new ArrayList<Move>();
+        List<Move> allResultingMoves = new ArrayList<Move>();
 
-        if (move instanceof DTOMove) {
-            int pos = train.findUserInTrain(move.getUserId());
-            Character character = train.getCharacterInTrain(move.getUserId());
-            train.removeCharacterInTrain(move.getUserId());
-            trainRepo.save(train);
-            train.moveUser(character, pos, move);
-            trainRepo.save(train);
-            for (User us:players) {
-                if (move.getUserId() != us.getId()) {
+        if (moveToApply instanceof DTOMove) {
+            int userPositionInTrain = completeTrain.findUserInTrain(moveToApply.getUserId());
+            Character character = completeTrain.getCharacterInTrain(moveToApply.getUserId());
+            completeTrain.removeCharacterInTrain(moveToApply.getUserId());
+            trainRepo.save(completeTrain);
+            completeTrain.moveUser(character, userPositionInTrain, moveToApply);
+            trainRepo.save(completeTrain);
+            for (User user : players) {
+                if (moveToApply.getUserId() != user.getId()) {
                     Move newMove = new DTOMove();
-                    newMove.setUserId(us.getId());
-                    moves.add(newMove);
-                }
-                else {
-                	
+                    newMove.setUserId(user.getId());
+                    allResultingMoves.add(newMove);
                 }
             }
-            moves.add(move);
-            return moves;
+            allResultingMoves.add(moveToApply);
+            return allResultingMoves;
         }
-        else if (move instanceof DTOClimb) {
-            int pos = train.findUserInTrain(move.getUserId());
-            train.removeCharacterInTrain(move.getUserId());
-            trainRepo.save(train);
-            train.climbCharacter(charRepo.findFirstByUserId(move.getUserId()), pos);
-            trainRepo.save(train);
+        else if (moveToApply instanceof DTOClimb) {
+            int userPositionInTrain = completeTrain.findUserInTrain(moveToApply.getUserId());
+            completeTrain.removeCharacterInTrain(moveToApply.getUserId());
+            trainRepo.save(completeTrain);
+            completeTrain.climbCharacter(charRepo.findFirstByUserId(moveToApply.getUserId()), userPositionInTrain);
+            trainRepo.save(completeTrain);
             for (User user:players) {
-                if (move.getUserId()!=user.getId()) {
+                if (moveToApply.getUserId() != user.getId()) {
                     Move newMove = new DTOClimb();
                     newMove.setUserId(user.getId());
-                    moves.add(newMove);
+                    allResultingMoves.add(newMove);
                 } else {
-                    move.setGameId(gameId);
+                    moveToApply.setGameId(gameId);
                 }
             }
-            moves.add(move);
-            return moves;
-        } else if (move instanceof DTOShoot) {
+            allResultingMoves.add(moveToApply);
+            return allResultingMoves;
+        } else if (moveToApply instanceof DTOShoot) {
             AmmoCard marshalAmmoCard = new AmmoCard();
             boolean walkedIntoMarshal = false;
-            if (abilityService.hasSpecialAbility(gameId, move.getUserId(), move)) {
-                boolean left = false;
-                if (train.findUserInTrain(move.getUserId()) > train.findUserInTrain(((DTOShoot) move).getVictim().getId())) {
-                    if(train.walkedIntoMarshal(train.findUserInTrain(((DTOShoot) move).getVictim().getId()), true)) {
+            if (abilityService.hasSpecialAbility(gameId, moveToApply.getUserId(), moveToApply)) {
+                boolean goesLeft = false;
+                if (completeTrain.findUserInTrain(moveToApply.getUserId()) > completeTrain.findUserInTrain(((DTOShoot) moveToApply).getVictim().getId())) {
+                    if(completeTrain.walkedIntoMarshal(completeTrain.findUserInTrain(((DTOShoot) moveToApply).getVictim().getId()), true)) {
                         walkedIntoMarshal = true;
-                        left=true;
+                        goesLeft = true;
                     }
                 } else {
-                    if(train.walkedIntoMarshal(train.findUserInTrain(((DTOShoot) move).getVictim().getId()), false)) {
+                    if(completeTrain.walkedIntoMarshal(completeTrain.findUserInTrain(((DTOShoot) moveToApply).getVictim().getId()), false)) {
                         walkedIntoMarshal = true;
-                        left = false;
+                        goesLeft = false;
                     }
                 }
                 // If django shot the person into the wagon with the marshal
                 if (walkedIntoMarshal) {
-                    int userPosition = train.findUserInTrain(((DTOShoot)move).getVictim().getId());
-                    Character character = train.getCharacterInTrain(((DTOShoot)move).getVictim().getId());
-                    train.removeCharacterInTrain(((DTOShoot)move).getVictim().getId());
-                    trainRepo.save(train);
-                    train.moveUser(character, userPosition, left);
-                    trainRepo.save(train);
-                    if (cs.getAmmoCard() != null) {
-                        marshalAmmoCard = cs.getAmmoCard();
-                        cs.removeLastAmmoCard();
-                        allCards.save(cs);
+                    int userPosition = completeTrain.findUserInTrain(((DTOShoot) moveToApply).getVictim().getId());
+                    Character character = completeTrain.getCharacterInTrain(((DTOShoot) moveToApply).getVictim().getId());
+                    completeTrain.removeCharacterInTrain(((DTOShoot) moveToApply).getVictim().getId());
+                    trainRepo.save(completeTrain);
+                    completeTrain.moveUser(character, userPosition, goesLeft);
+                    trainRepo.save(completeTrain);
+                    if (cardStack.getAmmoCard() != null) {
+                        marshalAmmoCard = cardStack.getAmmoCard();
+                        cardStack.removeLastAmmoCard();
+                        allCards.save(cardStack);
                         ammoCardRepo.save(marshalAmmoCard);
                     }
                 } else {
-                    int pos = train.findUserInTrain(((DTOShoot) move).getVictim().getId());
-                    Character character = train.getCharacterInTrain(((DTOShoot) move).getVictim().getId());
-                    train.removeCharacterInTrain(((DTOShoot) move).getVictim().getId());
-                    trainRepo.save(train);
-                    charRepo.findFirstByUserId(move.getUserId()).getSpecialAbility().doAbility(character, pos, move, train);
-                    trainRepo.save(train);
+                    int userPositionInTrain = completeTrain.findUserInTrain(((DTOShoot) moveToApply).getVictim().getId());
+                    Character character = completeTrain.getCharacterInTrain(((DTOShoot) moveToApply).getVictim().getId());
+                    completeTrain.removeCharacterInTrain(((DTOShoot) moveToApply).getVictim().getId());
+                    trainRepo.save(completeTrain);
+                    charRepo.findFirstByUserId(moveToApply.getUserId()).getSpecialAbility().doAbility(character, userPositionInTrain, moveToApply, completeTrain);
+                    trainRepo.save(completeTrain);
                 }
             }
-            List<AmmoCard> ammoCards = ammoCardRepo.findByUserId(move.getUserId());
+            List<AmmoCard> ammoCards = ammoCardRepo.findByUserId(moveToApply.getUserId());
             AmmoCard ammoCard = new AmmoCard();
             for (AmmoCard amc: ammoCards)
             {
@@ -185,7 +182,7 @@ public class PostService {
                 ammoCard = amc;
                 if (amc.getVictim() == 0) {
 
-                    for (int i=0; i < ammoCards.size();i++) {
+                    for (int i = 0; i < ammoCards.size();i++) {
                         if (ammoCards.get(i).getBulletRound() > amc.getBulletRound() && ammoCards.get(i).getVictim() == 0) {
                             break;
                         } else {
@@ -197,38 +194,38 @@ public class PostService {
                     }
                 }
             }
-            ammoCard.setVictim(((DTOShoot)move).getVictim().getId());
+            ammoCard.setVictim(((DTOShoot) moveToApply).getVictim().getId());
             ammoCardRepo.save(ammoCard);
             for (User us:players) {
-                if (move.getUserId() != us.getId()) {
-                    if (((DTOShoot)move).getVictim().getId() != us.getId()) {
+                if (moveToApply.getUserId() != us.getId()) {
+                    if (( (DTOShoot) moveToApply).getVictim().getId() != us.getId()) {
                         Move newMove = new DTOShoot();
                         newMove.setUserId(us.getId());
                         newMove.setGameId(gameId);
-                        ((DTOShoot)newMove).setVictim(((DTOShoot) move).getVictim());
-                        ((DTOShoot)newMove).setVictim(userRepo.findOne(((DTOShoot) move).getVictim().getId()));
-                        moves.add(newMove);
+                        ((DTOShoot)newMove).setVictim(((DTOShoot) moveToApply).getVictim());
+                        ((DTOShoot)newMove).setVictim(userRepo.findOne(( (DTOShoot) moveToApply).getVictim().getId()));
+                        allResultingMoves.add(newMove);
                     } else {
                         Move newMove = new DTOShoot();
                         newMove.setUserId(us.getId());
                         newMove.setGameId(gameId);
-                        ((DTOShoot)newMove).setVictim(((DTOShoot) move).getVictim());
+                        ((DTOShoot)newMove).setVictim(((DTOShoot) moveToApply).getVictim());
                         if (ammoCard.getId() != null) {
                             ((DTOShoot) newMove).setVictimAmmoCard(ammoCard);
                         }
                         if (walkedIntoMarshal) {
-                            ((DTOShoot)move).setMarshalAmmoCard(marshalAmmoCard);
+                            ((DTOShoot)moveToApply).setMarshalAmmoCard(marshalAmmoCard);
                         }
-                        moves.add(newMove);
+                        allResultingMoves.add(newMove);
                     }
                 }
             }
-            moves.add(move);
-            return moves;
-        } else if (move instanceof DTOPunch) {
+            allResultingMoves.add(moveToApply);
+            return allResultingMoves;
+        } else if (moveToApply instanceof DTOPunch) {
             boolean foundNothing = true;
-            if (abilityService.hasSpecialAbility(gameId,move.getUserId(), move)) {
-                List<Loot> loots = lootRepo.findByUserId((((DTOPunch) move).getVictim().getId()));
+            if (abilityService.hasSpecialAbility(gameId, moveToApply.getUserId(), moveToApply)) {
+                List<Loot> loots = lootRepo.findByUserId((( (DTOPunch) moveToApply).getVictim().getId()));
                 List<Loot> lootr = new ArrayList<Loot>();
                 for (Loot loot : loots) {
                     if (loot instanceof MoneyBag) {
@@ -237,172 +234,172 @@ public class PostService {
                 }
                 if (lootr.size() > 0) {
                     Loot loot = lootr.get(ThreadLocalRandom.current().nextInt(0, lootr.size()));
-                    charRepo.findFirstByUserId(move.getUserId()).getSpecialAbility().doAbility(move, loot);
+                    charRepo.findFirstByUserId(moveToApply.getUserId()).getSpecialAbility().doAbility(moveToApply, loot);
                     lootRepo.save(loot);
                     foundNothing = false;
 
                     //Move the character after the punch
-                    int userPosition = train.findUserInTrain(((DTOPunch)move).getVictim().getId());
-                    boolean hitMarshal = train.walkedIntoMarshal(userPosition, ((DTOPunch) move).isLeft());
-                    Character character = train.getCharacterInTrain(((DTOPunch)move).getVictim().getId());
-                    train.removeCharacterInTrain(((DTOPunch)move).getVictim().getId());
-                    trainRepo.save(train);
-                    train.moveUser(character, userPosition, ((DTOPunch) move).isLeft());
-                    trainRepo.save(train);
+                    int userPosition = completeTrain.findUserInTrain(((DTOPunch)moveToApply).getVictim().getId());
+                    boolean hitMarshal = completeTrain.walkedIntoMarshal(userPosition, ((DTOPunch) moveToApply).isLeft());
+                    Character character = completeTrain.getCharacterInTrain(((DTOPunch)moveToApply).getVictim().getId());
+                    completeTrain.removeCharacterInTrain(((DTOPunch)moveToApply).getVictim().getId());
+                    trainRepo.save(completeTrain);
+                    completeTrain.moveUser(character, userPosition, ((DTOPunch) moveToApply).isLeft());
+                    trainRepo.save(completeTrain);
                     AmmoCard ammoCard = new AmmoCard();
                     if(hitMarshal) {
-                        if (cs.getAmmoCard() != null) {
-                            ammoCard = cs.getAmmoCard();
-                            cs.removeLastAmmoCard();
-                            allCards.save(cs);
+                        if (cardStack.getAmmoCard() != null) {
+                            ammoCard = cardStack.getAmmoCard();
+                            cardStack.removeLastAmmoCard();
+                            allCards.save(cardStack);
                             ammoCardRepo.save(ammoCard);
                         }
                     }
 
-                    for (User us : players) {
-                        if ( move.getUserId() != us.getId()) {
-                            if (((DTOPunch) move).getVictim().getId() != us.getId()) {
+                    for (User otherUser : players) {
+                        if ( moveToApply.getUserId() != otherUser.getId()) {
+                            if (((DTOPunch) moveToApply).getVictim().getId() != otherUser.getId()) {
                                 Move newMove = new DTOPunch();
-                                newMove.setUserId(us.getId());
+                                newMove.setUserId(otherUser.getId());
                                 newMove.setGameId(gameId);
-                                ((DTOPunch)newMove).setVictim(((DTOPunch) move).getVictim());
+                                ((DTOPunch)newMove).setVictim(((DTOPunch) moveToApply).getVictim());
                                 ((DTOPunch)newMove).setDTOLoot(null);
-                                moves.add(newMove);
+                                allResultingMoves.add(newMove);
                             } else {
                                 Move newMove = new DTOPunch();
-                                newMove.setUserId(us.getId());
+                                newMove.setUserId(otherUser.getId());
                                 newMove.setGameId(gameId);
-                                ((DTOPunch)newMove).setVictim(((DTOPunch) move).getVictim());
+                                ((DTOPunch)newMove).setVictim(((DTOPunch) moveToApply).getVictim());
                                 ((DTOPunch)newMove).setDTOLoot(null);
                                 if (loot != null) {
                                     ((DTOPunch) newMove).setStolenLoot(loot);
                                 }
                                 if (hitMarshal) {
-                                    ((DTOPunch) move).setShotAmmoCard(ammoCard);
+                                    ((DTOPunch) moveToApply).setShotAmmoCard(ammoCard);
                                 }
-                                moves.add(newMove);
+                                allResultingMoves.add(newMove);
                             }
                         } else {
-                            ((DTOPunch)move).setDTOLoot(null);
+                            ((DTOPunch) moveToApply).setDTOLoot(null);
                             if (loot != null) {
-                                ((DTOPunch) move).setCheyenneLoot(loot);
+                                ((DTOPunch) moveToApply).setCheyenneLoot(loot);
                             }
                         }
                     }
-                    moves.add(move);
-                    return moves;
+                    allResultingMoves.add(moveToApply);
+                    return allResultingMoves;
                 }
             }
             if (foundNothing) {
-                List<Loot> loots = lootRepo.findByUserId((((DTOPunch) move).getVictim().getId()));
+                List<Loot> loots = lootRepo.findByUserId((((DTOPunch) moveToApply).getVictim().getId()));
                 List<Loot> lootr = new ArrayList<Loot>();
                 for (Loot loot : loots) {
-                    if (loot.getValue() == ((DTOPunch) move).getDTOLoot().getValue() && loot.getLootType() == ((DTOPunch) move).getDTOLoot().getLootType())
+                    if (loot.getValue() == ((DTOPunch) moveToApply).getDTOLoot().getValue() && loot.getLootType() == ((DTOPunch) moveToApply).getDTOLoot().getLootType())
                         lootr.add(loot);
                         loot.setUserId(0);
-                        train.getWagons().get(train.findUserInTrain(move.getUserId())/2).getTrainLevels().get(train.findUserInTrain(move.getUserId())%2).addLoot(loot);
+                        completeTrain.getWagons().get(completeTrain.findUserInTrain(moveToApply.getUserId())/2).getTrainLevels().get(completeTrain.findUserInTrain(moveToApply.getUserId())%2).addLoot(loot);
                         lootRepo.save(loot);
-                        trainRepo.save(train);
-                        allCards.save(cs);
+                        trainRepo.save(completeTrain);
+                        allCards.save(cardStack);
                         break;
                 }
                 //Move the character after the punch
-                int userPosition = train.findUserInTrain(((DTOPunch)move).getVictim().getId());
-                boolean hitMarshal = train.walkedIntoMarshal(userPosition, ((DTOPunch) move).isLeft());
-                Character character = train.getCharacterInTrain(((DTOPunch)move).getVictim().getId());
-                train.removeCharacterInTrain(((DTOPunch)move).getVictim().getId());
-                trainRepo.save(train);
-                train.moveUser(character, userPosition, ((DTOPunch) move).isLeft());
-                trainRepo.save(train);
+                int userPosition = completeTrain.findUserInTrain(((DTOPunch)moveToApply).getVictim().getId());
+                boolean hitMarshal = completeTrain.walkedIntoMarshal(userPosition, ((DTOPunch) moveToApply).isLeft());
+                Character character = completeTrain.getCharacterInTrain(((DTOPunch)moveToApply).getVictim().getId());
+                completeTrain.removeCharacterInTrain(((DTOPunch)moveToApply).getVictim().getId());
+                trainRepo.save(completeTrain);
+                completeTrain.moveUser(character, userPosition, ((DTOPunch) moveToApply).isLeft());
+                trainRepo.save(completeTrain);
                 AmmoCard ammoCard = new AmmoCard();
                 if(hitMarshal) {
-                    if (cs.getAmmoCard() != null) {
-                        ammoCard = cs.getAmmoCard();
-                        cs.removeLastAmmoCard();
-                        allCards.save(cs);
+                    if (cardStack.getAmmoCard() != null) {
+                        ammoCard = cardStack.getAmmoCard();
+                        cardStack.removeLastAmmoCard();
+                        allCards.save(cardStack);
                         ammoCardRepo.save(ammoCard);
                     }
                 }
                 for (User us:players) {
-                    if (move.getUserId() != us.getId()) {
-                        if (((DTOPunch)move).getVictim().getId() != us.getId()) {
+                    if (moveToApply.getUserId() != us.getId()) {
+                        if (((DTOPunch)moveToApply).getVictim().getId() != us.getId()) {
                             Move newMove = new DTOPunch();
                             newMove.setUserId(us.getId());
                             newMove.setGameId(gameId);
-                            ((DTOPunch)newMove).setVictim(((DTOPunch) move).getVictim());
+                            ((DTOPunch)newMove).setVictim(((DTOPunch) moveToApply).getVictim());
                             ((DTOPunch)newMove).setDTOLoot(null);
-                            ((DTOPunch) newMove).setVictim(userRepo.findOne(((DTOPunch) move).getVictim().getId()));
-                            moves.add(newMove);
+                            ((DTOPunch) newMove).setVictim(userRepo.findOne(((DTOPunch) moveToApply).getVictim().getId()));
+                            allResultingMoves.add(newMove);
                         } else {
                             Move newMove = new DTOPunch();
                             newMove.setUserId(us.getId());
                             newMove.setGameId(gameId);
-                            ((DTOPunch)newMove).setVictim(((DTOPunch) move).getVictim());
+                            ((DTOPunch)newMove).setVictim(((DTOPunch) moveToApply).getVictim());
                             ((DTOPunch)newMove).setDTOLoot(null);
                             if (lootr.size() > 0) {
                                 ((DTOPunch) newMove).setStolenLoot(lootr.get(0));
                             }
                             if (hitMarshal) {
-                                ((DTOPunch) move).setShotAmmoCard(ammoCard);
+                                ((DTOPunch) moveToApply).setShotAmmoCard(ammoCard);
                             }
-                            moves.add(newMove);
+                            allResultingMoves.add(newMove);
                         }
                     } else {
-                        ((DTOPunch)move).setDTOLoot(null);
+                        ((DTOPunch)moveToApply).setDTOLoot(null);
                     }
                 }
-                moves.add(move);
-                return moves;
+                allResultingMoves.add(moveToApply);
+                return allResultingMoves;
             }
-        } else if (move instanceof DTORob) {
-            int userPosition = train.findUserInTrain(move.getUserId());
-            for (Loot loot : train.getWagons().get(userPosition/2).getTrainLevels().get(userPosition%2).getLoot()) {
-	            if (loot.getValue() == ((DTORob) move).getDTOLoot().getValue() && loot.getLootType().equals(((DTORob) move).getDTOLoot().getLootType())) {
-	                train.getWagons().get(userPosition/2).getTrainLevels().get(userPosition%2).removeLoot(loot);
-	                loot.setUserId(move.getUserId());
+        } else if (moveToApply instanceof DTORob) {
+            int userPosition = completeTrain.findUserInTrain(moveToApply.getUserId());
+            for (Loot loot : completeTrain.getWagons().get(userPosition/2).getTrainLevels().get(userPosition%2).getLoot()) {
+	            if (loot.getValue() == ((DTORob) moveToApply).getDTOLoot().getValue() && loot.getLootType().equals(((DTORob) moveToApply).getDTOLoot().getLootType())) {
+	                completeTrain.getWagons().get(userPosition/2).getTrainLevels().get(userPosition%2).removeLoot(loot);
+	                loot.setUserId(moveToApply.getUserId());
 	                new MoneyBag();
 	                lootRepo.save(loot);
-	                trainRepo.save(train);
+	                trainRepo.save(completeTrain);
 	                break;
 	            }
             }
             for (User us:players) {
-                if (move.getUserId() != us.getId()) {
+                if (moveToApply.getUserId() != us.getId()) {
                     Move newMove = new DTORob();
                     newMove.setUserId(us.getId());
                     newMove.setGameId(gameId);
-                    moves.add(newMove);
+                    allResultingMoves.add(newMove);
                 } else {
-                    ((DTORob)move).setDTOLoot(null);
+                    ((DTORob)moveToApply).setDTOLoot(null);
                 }
             }
-            moves.add(move);
-            return moves;
-        } else if (move instanceof DTOMarshal) {
-            train.moveMarshal(((DTOMarshal) move).isLeft());
-            int marshalPosition = train.findMarshal();
+            allResultingMoves.add(moveToApply);
+            return allResultingMoves;
+        } else if (moveToApply instanceof DTOMarshal) {
+            completeTrain.moveMarshal(((DTOMarshal) moveToApply).isLeft());
+            int marshalPosition = completeTrain.findMarshal();
             List<AmmoCard> amc = new ArrayList<AmmoCard>();
-            for (int i = 0; i < train.getWagons().get(marshalPosition / 2).getTrainLevels().get(0).getCharacters().size(); i++) {
-                if (cs.getAmmoCard() != null) {
-                    AmmoCard ammoCard = cs.getAmmoCard();
-                    cs.removeLastAmmoCard();
-                    ammoCard.setVictim(train.getWagons().get(marshalPosition/2).getTrainLevels().get(0).getCharacters().get(i).getUserId());
+            for (int i = 0; i < completeTrain.getWagons().get(marshalPosition / 2).getTrainLevels().get(0).getCharacters().size(); i++) {
+                if (cardStack.getAmmoCard() != null) {
+                    AmmoCard ammoCard = cardStack.getAmmoCard();
+                    cardStack.removeLastAmmoCard();
+                    ammoCard.setVictim(completeTrain.getWagons().get(marshalPosition/2).getTrainLevels().get(0).getCharacters().get(i).getUserId());
                     amc.add(ammoCard);
-                    allCards.save(cs);
+                    allCards.save(cardStack);
                     ammoCardRepo.save(ammoCard);
                 }
             }
             List<Character> characters = new ArrayList<Character>();
-            for (Character chr : train.getWagons().get(train.findMarshal()/2).getTrainLevels().get(0).getCharacters()) {
+            for (Character chr : completeTrain.getWagons().get(completeTrain.findMarshal()/2).getTrainLevels().get(0).getCharacters()) {
                 characters.add(chr);
             }
-            train.removeFleeFromMarshal(characters);
-            trainRepo.save(train);
-            train.addFleeFromMarshal(characters);
-            trainRepo.save(train);
+            completeTrain.removeFleeFromMarshal(characters);
+            trainRepo.save(completeTrain);
+            completeTrain.addFleeFromMarshal(characters);
+            trainRepo.save(completeTrain);
 
             for (User us:players) {
-                if (move.getUserId() != us.getId()) {
+                if (moveToApply.getUserId() != us.getId()) {
                     Move newMove = new DTOMarshal();
                     newMove.setUserId(us.getId());
                     newMove.setGameId(gameId);
@@ -413,54 +410,54 @@ public class PostService {
                             }
                         }
                     }
-                    moves.add(newMove);
+                    allResultingMoves.add(newMove);
                 } else {
                     if (amc.size() > 0) {
                         for (AmmoCard va : amc) {
                             if (va.getVictim() == us.getId()) {
-                                ((DTOMarshal) move).setShotAmmoCard(va);
+                                ((DTOMarshal) moveToApply).setShotAmmoCard(va);
                             }
                         }
                     }
                 }
             }
-            moves.add(move);
-            return moves;
-        } else if (move instanceof DTOInvalid) {
+            allResultingMoves.add(moveToApply);
+            return allResultingMoves;
+        } else if (moveToApply instanceof DTOInvalid) {
             AmmoCard amc = new AmmoCard();
-            if(((DTOInvalid) move).isWalkedIntoMarshal()) {
-                if (cs.getAmmoCard() != null) {
-                    AmmoCard ammoCard = cs.getAmmoCard();
+            if(((DTOInvalid) moveToApply).isWalkedIntoMarshal()) {
+                if (cardStack.getAmmoCard() != null) {
+                    AmmoCard ammoCard = cardStack.getAmmoCard();
                     amc = ammoCard;
-                    cs.removeLastAmmoCard();
+                    cardStack.removeLastAmmoCard();
                     //ammoCard.setUserId(move.getUserId());
-                    amc.setVictim(move.getUserId());
-                    allCards.save(cs);
+                    amc.setVictim(moveToApply.getUserId());
+                    allCards.save(cardStack);
                     ammoCardRepo.save(ammoCard);
                 }
-                train.findUserInTrain(move.getUserId());
-                int marshalPos = train.findMarshal();
-                Character character = train.getCharacterInTrain(move.getUserId());
-                train.removeCharacterInTrain(move.getUserId());
-                trainRepo.save(train);
-                train.addCharacter(character, marshalPos + 1);
-                trainRepo.save(train);
+                completeTrain.findUserInTrain(moveToApply.getUserId());
+                int marshalPos = completeTrain.findMarshal();
+                Character character = completeTrain.getCharacterInTrain(moveToApply.getUserId());
+                completeTrain.removeCharacterInTrain(moveToApply.getUserId());
+                trainRepo.save(completeTrain);
+                completeTrain.addCharacter(character, marshalPos + 1);
+                trainRepo.save(completeTrain);
             }
             for (User us:players) {
-                if (move.getUserId() != us.getId()) {
+                if (moveToApply.getUserId() != us.getId()) {
                     Move newMove = new DTOInvalid();
                     newMove.setUserId(us.getId());
                     newMove.setGameId(gameId);
-                    moves.add(newMove);
+                    allResultingMoves.add(newMove);
                 } else {
                     //amc gets initialized so the null check doesnt work
                     if (amc.getId() != null) {
-                        ((DTOInvalid) move).setAmmoCard(amc);
+                        ((DTOInvalid) moveToApply).setAmmoCard(amc);
                     }
                 }
             }
-            moves.add(move);
-            return moves;
+            allResultingMoves.add(moveToApply);
+            return allResultingMoves;
         }
         return null;
     }
