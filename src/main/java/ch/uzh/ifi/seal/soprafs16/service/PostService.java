@@ -415,13 +415,17 @@ public class PostService {
                     ammoCardRepo.save(ammoCard);
                 }
             }
-            List<Character> characters = new ArrayList<Character>();
-            for (Character chr : completeTrain.getWagons().get(completeTrain.findMarshal()/2).getTrainLevels().get(0).getCharacters()) {
-                characters.add(chr);
-            }
-            completeTrain.removeFleeFromMarshal(characters);
+            
+            int marshalsPosition = completeTrain.findMarshal()/2;
+            TrainWagon trainWagonWithMarshal = completeTrain.getWagons().get(marshalsPosition);
+            TrainLevel trainLevelWithMarshal = trainWagonWithMarshal.getTrainLevels().get(0);
+            
+            List<Character> affectedCharacters = trainLevelWithMarshal.getCharacters();
+  
+
+            completeTrain.removeFleeFromMarshal(affectedCharacters);
             trainRepo.save(completeTrain);
-            completeTrain.addFleeFromMarshal(characters);
+            completeTrain.addFleeFromMarshal(affectedCharacters);
             trainRepo.save(completeTrain);
 
             for (User us:players) {
