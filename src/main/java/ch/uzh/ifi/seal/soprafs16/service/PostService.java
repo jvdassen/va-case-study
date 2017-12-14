@@ -374,7 +374,11 @@ public class PostService {
         } else if (moveToApply instanceof DTORob) {
             int userPosition = completeTrain.findUserInTrain(moveToApply.getUserId());
             for (Loot loot : completeTrain.getWagons().get(userPosition/2).getTrainLevels().get(userPosition%2).getLoot()) {
-	            if (loot.getValue() == ((DTORob) moveToApply).getDTOLoot().getValue() && loot.getLootType().equals(((DTORob) moveToApply).getDTOLoot().getLootType())) {
+
+            	boolean lootValuesMatching = loot.getValue() == ((DTORob) moveToApply).getDTOLoot().getValue();
+            	boolean lootTypesMatching = loot.getLootType().equals(((DTORob) moveToApply).getDTOLoot().getLootType());
+
+            	if (lootValuesMatching && lootTypesMatching) {
 	                completeTrain.getWagons().get(userPosition/2).getTrainLevels().get(userPosition%2).removeLoot(loot);
 	                loot.setUserId(moveToApply.getUserId());
 	                new MoneyBag();
