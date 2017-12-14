@@ -292,7 +292,7 @@ public class PostService {
             }
             if (foundNothing) {
                 List<Loot> loots = lootRepo.findByUserId((((DTOPunch) moveToApply).getVictim().getId()));
-                List<Loot> lootr = new ArrayList<Loot>();
+                List<Loot> resultingLoot = new ArrayList<Loot>();
                 for (Loot loot : loots) {
                     if (loot.getValue() == ((DTOPunch) moveToApply).getDTOLoot().getValue() && loot.getLootType() == ((DTOPunch) moveToApply).getDTOLoot().getLootType())
                         lootr.add(loot);
@@ -336,8 +336,8 @@ public class PostService {
                             newMove.setGameId(gameId);
                             ((DTOPunch)newMove).setVictim(((DTOPunch) moveToApply).getVictim());
                             ((DTOPunch)newMove).setDTOLoot(null);
-                            if (lootr.size() > 0) {
-                                ((DTOPunch) newMove).setStolenLoot(lootr.get(0));
+                            if (resultingLoot.size() > 0) {
+                                ((DTOPunch) newMove).setStolenLoot(resultingLoot.get(0));
                             }
                             if (hitMarshal) {
                                 ((DTOPunch) moveToApply).setShotAmmoCard(ammoCard);
