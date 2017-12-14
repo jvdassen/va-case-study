@@ -409,21 +409,22 @@ public class PostService {
             return allResultingMoves;
         } else if (moveToApply instanceof DTOMarshal) {
             completeTrain.moveMarshal(((DTOMarshal) moveToApply).isLeft());
-            List<AmmoCard> amc = new ArrayList<AmmoCard>();
-            for (int i = 0; i < completeTrain.getWagons().get(marshalPosition / 2).getTrainLevels().get(0).getCharacters().size(); i++) {
+            List<AmmoCard> ammoCardsAfterMove = new ArrayList<AmmoCard>();
+            
+            List<Character> affectedCharacters = trainLevelWithMarshal.getCharacters();
+
+            for (int i = 0; i < affectedCharacters.size(); i++) {
                 if (cardStack.getAmmoCard() != null) {
                     AmmoCard ammoCard = cardStack.getAmmoCard();
                     cardStack.removeLastAmmoCard();
                     
-                    ammoCard.setVictim(completeTrain.getWagons().get(marshalPosition/2).getTrainLevels().get(0).getCharacters().get(i).getUserId());
-                    amc.add(ammoCard);
+                    ammoCard.setVictim(affectedCharacters.get(i).getUserId());
+                    ammoCardsAfterMove.add(ammoCard);
                     allCards.save(cardStack);
                     ammoCardRepo.save(ammoCard);
                 }
             }
-            
-            List<Character> affectedCharacters = trainLevelWithMarshal.getCharacters();
-  
+              
             completeTrain.removeFleeFromMarshal(affectedCharacters);
             trainRepo.save(completeTrain);
             completeTrain.addFleeFromMarshal(affectedCharacters);
@@ -467,11 +468,10 @@ public class PostService {
                     ammoCardRepo.save(ammoCard);
                 }
                 completeTrain.findUserInTrain(moveToApply.getUserId());
-                int marshalPos = completeTrain.findMarshal();
                 Character character = completeTrain.getCharacterInTrain(moveToApply.getUserId());
                 completeTrain.removeCharacterInTrain(moveToApply.getUserId());
                 trainRepo.save(completeTrain);
-                completeTrain.addCharacter(character, marshalPos + 1);
+                completeTrain.addCharacter(character, marshalPosition + 1);
                 trainRepo.save(completeTrain);
             }
             for (User us:players) {
