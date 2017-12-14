@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import ch.uzh.ifi.seal.soprafs16.constant.GameStatus;
+import ch.uzh.ifi.seal.soprafs16.model.game.Game;
 
 public class GameTest {
 

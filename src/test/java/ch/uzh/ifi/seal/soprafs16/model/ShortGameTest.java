@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import ch.uzh.ifi.seal.soprafs16.model.game.ShortGame;
+
 public class ShortGameTest {
 
 	@Test

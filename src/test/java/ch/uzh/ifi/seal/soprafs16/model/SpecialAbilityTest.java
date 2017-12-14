@@ -6,6 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
+
+import ch.uzh.ifi.seal.soprafs16.constant.ECharacter;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOPunch;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOShoot;
+import ch.uzh.ifi.seal.soprafs16.model.environment.Train;
+import ch.uzh.ifi.seal.soprafs16.model.environment.TrainLevel;
+import ch.uzh.ifi.seal.soprafs16.model.environment.TrainWagon;
+import ch.uzh.ifi.seal.soprafs16.model.game.SpecialAbility;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.ActionCard;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.AmmoCard;
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.Diamond;
 /*
  * @author Luc Boillat
  */

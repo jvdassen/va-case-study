@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import ch.uzh.ifi.seal.soprafs16.constant.ECharacter;
+import ch.uzh.ifi.seal.soprafs16.model.game.SpecialAbility;
+
 public class CharacterTest {
 
 	@Test

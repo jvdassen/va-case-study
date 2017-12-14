@@ -6,6 +6,18 @@ import java.util.List;
 
 import org.junit.Test;
 
+import ch.uzh.ifi.seal.soprafs16.constant.EAction;
+import ch.uzh.ifi.seal.soprafs16.constant.ECharacter;
+import ch.uzh.ifi.seal.soprafs16.constant.ERound;
+import ch.uzh.ifi.seal.soprafs16.constant.ESpecialEvent;
+import ch.uzh.ifi.seal.soprafs16.model.game.Move;
+import ch.uzh.ifi.seal.soprafs16.model.game.Round;
+import ch.uzh.ifi.seal.soprafs16.model.game.SpecialEvent;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.ActionCard;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.AmmoCard;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.CardStack;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.RoundCard;
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.Lockbox;
 import junit.framework.Assert;
 /*
  * @author Jan von der Assen

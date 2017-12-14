@@ -4,6 +4,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOSpecialEvent;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.AmmoCard;
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.MoneyBag;
+
 public class DTOSpecialEventTest {
 
 	@Test

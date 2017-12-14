@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import ch.uzh.ifi.seal.soprafs16.constant.LootType;
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.Diamond;
 /*
  * @author Jan von der Assen
  */

@@ -4,7 +4,8 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
-import ch.uzh.ifi.seal.soprafs16.model.ShortGame;
+import ch.uzh.ifi.seal.soprafs16.model.environment.Train;
+import ch.uzh.ifi.seal.soprafs16.model.game.ShortGame;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.ShortGameRepository;
 
 import org.junit.Before;
@@ -15,9 +16,8 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import ch.uzh.ifi.seal.soprafs16.Application;
-import ch.uzh.ifi.seal.soprafs16.model.ESpecialEvent;
-import ch.uzh.ifi.seal.soprafs16.model.RoundCard;
-import ch.uzh.ifi.seal.soprafs16.model.Train;
+import ch.uzh.ifi.seal.soprafs16.constant.ESpecialEvent;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.RoundCard;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.RoundCardRepository;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.TrainRepository;
 import junit.framework.Assert;

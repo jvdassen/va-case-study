@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import antlr.collections.List;
+import ch.uzh.ifi.seal.soprafs16.model.game.PlayerSequence;
 /*
  * @author Luc Boillat
  */

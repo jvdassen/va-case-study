@@ -15,8 +15,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import ch.uzh.ifi.seal.soprafs16.Application;
+import ch.uzh.ifi.seal.soprafs16.constant.ECharacter;
 import ch.uzh.ifi.seal.soprafs16.model.Character;
-import ch.uzh.ifi.seal.soprafs16.model.ECharacter;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.CharacterRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)

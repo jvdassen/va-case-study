@@ -7,6 +7,9 @@ import java.util.List;
 
 import org.junit.Test;
 
+import ch.uzh.ifi.seal.soprafs16.model.environment.TrainLevel;
+import ch.uzh.ifi.seal.soprafs16.model.environment.TrainWagon;
+
 public class TrainWagonTest {
 
 	@Test

@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import java.util.List;
 import java.util.ArrayList;
 import ch.uzh.ifi.seal.soprafs16.constant.UserStatus;
-
+import ch.uzh.ifi.seal.soprafs16.model.game.Game;
 
 import org.junit.Test;
 

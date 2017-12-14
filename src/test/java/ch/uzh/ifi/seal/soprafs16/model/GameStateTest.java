@@ -3,6 +3,12 @@ package ch.uzh.ifi.seal.soprafs16.model;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import ch.uzh.ifi.seal.soprafs16.model.game.Game;
+import ch.uzh.ifi.seal.soprafs16.model.game.GameState;
+import ch.uzh.ifi.seal.soprafs16.model.game.Phase;
+import ch.uzh.ifi.seal.soprafs16.model.game.PlayerSequence;
+import ch.uzh.ifi.seal.soprafs16.model.game.Round;
 /*
  * @author Luc Boillat
  */

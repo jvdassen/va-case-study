@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
 
+import ch.uzh.ifi.seal.soprafs16.constant.ECharacter;
+import ch.uzh.ifi.seal.soprafs16.model.environment.TrainLevel;
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.Diamond;
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.Loot;
+
 public class TrainLevelTest {
 
 	@Test

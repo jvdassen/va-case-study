@@ -3,6 +3,14 @@ package ch.uzh.ifi.seal.soprafs16.model;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import ch.uzh.ifi.seal.soprafs16.constant.ECharacter;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOMove;
+import ch.uzh.ifi.seal.soprafs16.model.environment.Train;
+import ch.uzh.ifi.seal.soprafs16.model.environment.TrainLevel;
+import ch.uzh.ifi.seal.soprafs16.model.environment.TrainWagon;
+import ch.uzh.ifi.seal.soprafs16.model.game.SpecialAbility;
+
 import java.util.ArrayList;
 import java.util.List;
 

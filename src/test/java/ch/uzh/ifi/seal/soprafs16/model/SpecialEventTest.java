@@ -7,6 +7,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import ch.uzh.ifi.seal.soprafs16.constant.ESpecialEvent;
+import ch.uzh.ifi.seal.soprafs16.model.game.Game;
+import ch.uzh.ifi.seal.soprafs16.model.game.SpecialEvent;
+
 public class SpecialEventTest {
 
 	@Test
