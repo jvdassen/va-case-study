@@ -1,9 +1,32 @@
 package ch.uzh.ifi.seal.soprafs16.service;
 
 
+import ch.uzh.ifi.seal.soprafs16.constant.EAction;
+import ch.uzh.ifi.seal.soprafs16.constant.ECharacter;
+import ch.uzh.ifi.seal.soprafs16.constant.EPhase;
+import ch.uzh.ifi.seal.soprafs16.constant.ERound;
+import ch.uzh.ifi.seal.soprafs16.constant.ESpecialEvent;
+import ch.uzh.ifi.seal.soprafs16.constant.ETurn;
 import ch.uzh.ifi.seal.soprafs16.constant.LootType;
 import ch.uzh.ifi.seal.soprafs16.model.*;
 import ch.uzh.ifi.seal.soprafs16.model.Character;
+import ch.uzh.ifi.seal.soprafs16.model.environment.Train;
+import ch.uzh.ifi.seal.soprafs16.model.environment.TrainLevel;
+import ch.uzh.ifi.seal.soprafs16.model.environment.TrainWagon;
+import ch.uzh.ifi.seal.soprafs16.model.game.Game;
+import ch.uzh.ifi.seal.soprafs16.model.game.GameState;
+import ch.uzh.ifi.seal.soprafs16.model.game.Phase;
+import ch.uzh.ifi.seal.soprafs16.model.game.PlayerSequence;
+import ch.uzh.ifi.seal.soprafs16.model.game.Round;
+import ch.uzh.ifi.seal.soprafs16.model.game.SpecialAbility;
+import ch.uzh.ifi.seal.soprafs16.model.game.SpecialEvent;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.ActionCard;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.AmmoCard;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.CardStack;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.RoundCard;
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.Diamond;
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.Lockbox;
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.MoneyBag;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

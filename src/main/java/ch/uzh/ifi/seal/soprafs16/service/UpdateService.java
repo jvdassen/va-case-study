@@ -1,7 +1,15 @@
 package ch.uzh.ifi.seal.soprafs16.service;
 
 
+import ch.uzh.ifi.seal.soprafs16.constant.EPhase;
+import ch.uzh.ifi.seal.soprafs16.constant.ETurn;
 import ch.uzh.ifi.seal.soprafs16.model.*;
+import ch.uzh.ifi.seal.soprafs16.model.game.GameState;
+import ch.uzh.ifi.seal.soprafs16.model.game.Phase;
+import ch.uzh.ifi.seal.soprafs16.model.game.PlayerSequence;
+import ch.uzh.ifi.seal.soprafs16.model.game.Round;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.CardStack;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.RoundCard;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

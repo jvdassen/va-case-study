@@ -1,7 +1,23 @@
 package ch.uzh.ifi.seal.soprafs16.service;
 
+import ch.uzh.ifi.seal.soprafs16.constant.ETurn;
 import ch.uzh.ifi.seal.soprafs16.model.*;
 import ch.uzh.ifi.seal.soprafs16.model.Character;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOClimb;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOInvalid;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOMarshal;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOMove;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOPunch;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTORob;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOShoot;
+import ch.uzh.ifi.seal.soprafs16.model.environment.Train;
+import ch.uzh.ifi.seal.soprafs16.model.game.Move;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.ActionCard;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.AmmoCard;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.CardStack;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.RoundCard;
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.Loot;
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.MoneyBag;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

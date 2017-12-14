@@ -2,6 +2,14 @@ package ch.uzh.ifi.seal.soprafs16.service;
 
 import ch.uzh.ifi.seal.soprafs16.model.*;
 import ch.uzh.ifi.seal.soprafs16.model.Character;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOSpecialEvent;
+import ch.uzh.ifi.seal.soprafs16.model.environment.Train;
+import ch.uzh.ifi.seal.soprafs16.model.game.Game;
+import ch.uzh.ifi.seal.soprafs16.model.game.GameState;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.AmmoCard;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.CardStack;
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.Loot;
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.MoneyBag;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

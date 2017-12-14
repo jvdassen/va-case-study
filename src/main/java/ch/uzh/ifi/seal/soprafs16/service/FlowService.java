@@ -1,6 +1,12 @@
 package ch.uzh.ifi.seal.soprafs16.service;
 
+import ch.uzh.ifi.seal.soprafs16.constant.ERound;
+import ch.uzh.ifi.seal.soprafs16.constant.ESpecialEvent;
 import ch.uzh.ifi.seal.soprafs16.model.*;
+import ch.uzh.ifi.seal.soprafs16.model.game.GameState;
+import ch.uzh.ifi.seal.soprafs16.model.game.PlayerSequence;
+import ch.uzh.ifi.seal.soprafs16.model.game.Round;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.CardStack;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
