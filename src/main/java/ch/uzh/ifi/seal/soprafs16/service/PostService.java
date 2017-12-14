@@ -200,11 +200,14 @@ public class PostService {
             for (AmmoCard amc: ammoCardsOfMovingUser)
             {
                 int counter = 0;
-                ammoCard = amc;
                 if (amc.getVictim() == 0) {
 
                     for (int i = 0; i < ammoCardsOfMovingUser.size();i++) {
-                        if (ammoCardsOfMovingUser.get(i).getBulletRound() > amc.getBulletRound() && ammoCardsOfMovingUser.get(i).getVictim() == 0) {
+                    	
+                    	boolean isBulletRound = ammoCardsOfMovingUser.get(i).getBulletRound() > ammoCard.getBulletRound();
+                    	boolean ammoCardActionIsDefined = ammoCardsOfMovingUser.get(i).getVictim() == 0;
+                    	
+                        if (isBulletRound && ammoCardActionIsDefined) {
                             break;
                         } else {
                             counter++;
@@ -314,10 +317,10 @@ public class PostService {
                 List<Loot> loots = lootRepo.findByUserId((((DTOPunch) moveToApply).getVictim().getId()));
                 List<Loot> resultingLoot = new ArrayList<Loot>();
                 for (Loot loot : loots) {
-                	boolean matchingLootTypeAndValue = 	loot.getValue() == ((DTOPunch) moveToApply).getDTOLoot().getValue() &&
-                										loot.getLootType() == ((DTOPunch) moveToApply).getDTOLoot().getLootType();
+                	boolean matchingLootValue = loot.getValue() == ((DTOPunch) moveToApply).getDTOLoot().getValue();
+                	boolean matchingLootType = loot.getLootType() == ((DTOPunch) moveToApply).getDTOLoot().getLootType();
 
-                    if (matchingLootTypeAndValue)
+                    if (matchingLootValue && matchingLootType)
                         resultingLoot.add(loot);
                         loot.setUserId(0);
 
