@@ -111,6 +111,12 @@ public class PostService {
         CardStack cardStack = allCards.findByGameId(gameId).get(0);
         List<User> players = gameRepo.findOne(gameId).getPlayers();
         List<Move> allResultingMoves = new ArrayList<Move>();
+        
+        int marshalPosition = completeTrain.findMarshal();
+        TrainWagon trainWagonWithMarshal = completeTrain.getWagons().get(marshalPosition);
+        TrainLevel trainLevelWithMarshal = trainWagonWithMarshal.getTrainLevels().get(0);
+        
+
 
         if (moveToApply instanceof DTOMove) {
             int userPositionInTrain = completeTrain.findUserInTrain(moveToApply.getUserId());
@@ -403,12 +409,12 @@ public class PostService {
             return allResultingMoves;
         } else if (moveToApply instanceof DTOMarshal) {
             completeTrain.moveMarshal(((DTOMarshal) moveToApply).isLeft());
-            int marshalPosition = completeTrain.findMarshal();
             List<AmmoCard> amc = new ArrayList<AmmoCard>();
             for (int i = 0; i < completeTrain.getWagons().get(marshalPosition / 2).getTrainLevels().get(0).getCharacters().size(); i++) {
                 if (cardStack.getAmmoCard() != null) {
                     AmmoCard ammoCard = cardStack.getAmmoCard();
                     cardStack.removeLastAmmoCard();
+                    
                     ammoCard.setVictim(completeTrain.getWagons().get(marshalPosition/2).getTrainLevels().get(0).getCharacters().get(i).getUserId());
                     amc.add(ammoCard);
                     allCards.save(cardStack);
@@ -416,13 +422,8 @@ public class PostService {
                 }
             }
             
-            int marshalsPosition = completeTrain.findMarshal()/2;
-            TrainWagon trainWagonWithMarshal = completeTrain.getWagons().get(marshalsPosition);
-            TrainLevel trainLevelWithMarshal = trainWagonWithMarshal.getTrainLevels().get(0);
-            
             List<Character> affectedCharacters = trainLevelWithMarshal.getCharacters();
   
-
             completeTrain.removeFleeFromMarshal(affectedCharacters);
             trainRepo.save(completeTrain);
             completeTrain.addFleeFromMarshal(affectedCharacters);
