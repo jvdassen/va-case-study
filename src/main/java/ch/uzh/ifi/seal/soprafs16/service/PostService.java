@@ -123,6 +123,8 @@ public class PostService {
         int victimPosition = completeTrain.findUserInTrain(victim);
         
         Character movingCharacter = charRepo.findFirstByUserId(movingUser);
+        List<AmmoCard> ammoCardsOfMovingUser = ammoCardRepo.findByUserId(movingUser);
+
 
 
         if (moveToApply instanceof DTOMove) {
@@ -194,16 +196,15 @@ public class PostService {
                     trainRepo.save(completeTrain);
                 }
             }
-            List<AmmoCard> ammoCards = ammoCardRepo.findByUserId(movingUser);
             AmmoCard ammoCard = new AmmoCard();
-            for (AmmoCard amc: ammoCards)
+            for (AmmoCard amc: ammoCardsOfMovingUser)
             {
                 int counter = 0;
                 ammoCard = amc;
                 if (amc.getVictim() == 0) {
 
-                    for (int i = 0; i < ammoCards.size();i++) {
-                        if (ammoCards.get(i).getBulletRound() > amc.getBulletRound() && ammoCards.get(i).getVictim() == 0) {
+                    for (int i = 0; i < ammoCardsOfMovingUser.size();i++) {
+                        if (ammoCardsOfMovingUser.get(i).getBulletRound() > amc.getBulletRound() && ammoCardsOfMovingUser.get(i).getVictim() == 0) {
                             break;
                         } else {
                             counter++;
