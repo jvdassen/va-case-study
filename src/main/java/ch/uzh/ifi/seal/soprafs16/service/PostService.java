@@ -121,6 +121,8 @@ public class PostService {
 
         int movingUserPosition = completeTrain.findUserInTrain(movingUser);
         int victimPosition = completeTrain.findUserInTrain(victim);
+        
+        Character movingCharacter = charRepo.findFirstByUserId(movingUser);
 
 
         if (moveToApply instanceof DTOMove) {
@@ -142,7 +144,7 @@ public class PostService {
         else if (moveToApply instanceof DTOClimb) {
             completeTrain.removeCharacterInTrain(movingUser);
             trainRepo.save(completeTrain);
-            completeTrain.climbCharacter(charRepo.findFirstByUserId(movingUser), movingUserPosition);
+            completeTrain.climbCharacter(movingCharacter, movingUserPosition);
             trainRepo.save(completeTrain);
             for (User user:players) {
                 if (movingUser != user.getId()) {
@@ -188,7 +190,7 @@ public class PostService {
                     Character character = completeTrain.getCharacterInTrain(victim);
                     completeTrain.removeCharacterInTrain(((DTOShoot) moveToApply).getVictim().getId());
                     trainRepo.save(completeTrain);
-                    charRepo.findFirstByUserId(movingUser).getSpecialAbility().doAbility(character, movingUserPosition, moveToApply, completeTrain);
+                    movingCharacter.getSpecialAbility().doAbility(character, movingUserPosition, moveToApply, completeTrain);
                     trainRepo.save(completeTrain);
                 }
             }
@@ -252,7 +254,7 @@ public class PostService {
                 }
                 if (lootr.size() > 0) {
                     Loot loot = lootr.get(ThreadLocalRandom.current().nextInt(0, lootr.size()));
-                    charRepo.findFirstByUserId(movingUser).getSpecialAbility().doAbility(moveToApply, loot);
+                    movingCharacter.getSpecialAbility().doAbility(moveToApply, loot);
                     lootRepo.save(loot);
                     foundNothing = false;
 
