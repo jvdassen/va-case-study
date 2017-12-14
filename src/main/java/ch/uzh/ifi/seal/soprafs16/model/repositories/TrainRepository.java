@@ -1,12 +1,9 @@
 package ch.uzh.ifi.seal.soprafs16.model.repositories;
 
-/**
- * Created by Laurenz on 14/04/16.
- */
-
-import ch.uzh.ifi.seal.soprafs16.model.Train;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import ch.uzh.ifi.seal.soprafs16.model.environment.Train;
 
 import java.util.List;
 

@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 import ch.uzh.ifi.seal.soprafs16.constant.UserStatus;
+import ch.uzh.ifi.seal.soprafs16.model.game.Game;
 
 @Entity
 public class User implements Serializable {

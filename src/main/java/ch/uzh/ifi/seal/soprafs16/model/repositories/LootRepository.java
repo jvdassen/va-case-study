@@ -1,8 +1,9 @@
 package ch.uzh.ifi.seal.soprafs16.model.repositories;
 
-import ch.uzh.ifi.seal.soprafs16.model.Loot;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.Loot;
 
 import java.util.List;
 

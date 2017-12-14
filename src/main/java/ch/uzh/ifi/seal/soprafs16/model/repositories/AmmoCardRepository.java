@@ -1,8 +1,9 @@
 package ch.uzh.ifi.seal.soprafs16.model.repositories;
 
-import ch.uzh.ifi.seal.soprafs16.model.AmmoCard;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.AmmoCard;
 
 import java.util.List;
 

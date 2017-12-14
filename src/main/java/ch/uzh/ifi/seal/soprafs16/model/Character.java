@@ -14,6 +14,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import ch.uzh.ifi.seal.soprafs16.constant.ECharacter;
+import ch.uzh.ifi.seal.soprafs16.model.game.SpecialAbility;
+
 @Entity
 public class Character implements Serializable{
 
