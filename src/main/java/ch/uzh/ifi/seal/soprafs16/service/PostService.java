@@ -11,6 +11,8 @@ import ch.uzh.ifi.seal.soprafs16.model.dto.DTOPunch;
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTORob;
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTOShoot;
 import ch.uzh.ifi.seal.soprafs16.model.environment.Train;
+import ch.uzh.ifi.seal.soprafs16.model.environment.TrainLevel;
+import ch.uzh.ifi.seal.soprafs16.model.environment.TrainWagon;
 import ch.uzh.ifi.seal.soprafs16.model.game.Move;
 import ch.uzh.ifi.seal.soprafs16.model.gamecard.ActionCard;
 import ch.uzh.ifi.seal.soprafs16.model.gamecard.AmmoCard;
@@ -296,10 +298,17 @@ public class PostService {
                 for (Loot loot : loots) {
                 	boolean matchingLootTypeAndValue = 	loot.getValue() == ((DTOPunch) moveToApply).getDTOLoot().getValue() &&
                 										loot.getLootType() == ((DTOPunch) moveToApply).getDTOLoot().getLootType();
+                	
                     if (matchingLootTypeAndValue)
                         resultingLoot.add(loot);
                         loot.setUserId(0);
-                        completeTrain.getWagons().get(completeTrain.findUserInTrain(moveToApply.getUserId())/2).getTrainLevels().get(completeTrain.findUserInTrain(moveToApply.getUserId())%2).addLoot(loot);
+                        
+                        int targetUserPosition = completeTrain.findUserInTrain(moveToApply.getUserId())/2;
+                        TrainWagon targetTrainWagon = completeTrain.getWagons().get(targetUserPosition);
+                        TrainLevel targetTrainLevel = targetTrainWagon.getTrainLevels().get(targetUserPosition);
+                        		
+                        targetTrainLevel.addLoot(loot);
+                        
                         lootRepo.save(loot);
                         trainRepo.save(completeTrain);
                         allCards.save(cardStack);
