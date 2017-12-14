@@ -1,6 +1,6 @@
 package ch.uzh.ifi.seal.soprafs16.controller;
 
-import ch.uzh.ifi.seal.soprafs16.model.AmmoCard;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.AmmoCard;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.AmmoCardRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

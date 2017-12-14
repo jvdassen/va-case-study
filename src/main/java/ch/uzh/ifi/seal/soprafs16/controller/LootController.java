@@ -1,10 +1,10 @@
 package ch.uzh.ifi.seal.soprafs16.controller;
 
 
+import ch.uzh.ifi.seal.soprafs16.model.lootobject.Loot;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.LootRepository;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.UserRepository;
 import org.springframework.web.bind.annotation.RestController;
-import ch.uzh.ifi.seal.soprafs16.model.Loot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

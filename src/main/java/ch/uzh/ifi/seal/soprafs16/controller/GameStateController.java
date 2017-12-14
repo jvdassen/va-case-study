@@ -1,6 +1,6 @@
 package ch.uzh.ifi.seal.soprafs16.controller;
 
-import ch.uzh.ifi.seal.soprafs16.model.GameState;
+import ch.uzh.ifi.seal.soprafs16.model.game.GameState;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.GameStateRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

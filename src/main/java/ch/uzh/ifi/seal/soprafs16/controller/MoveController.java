@@ -1,6 +1,15 @@
 package ch.uzh.ifi.seal.soprafs16.controller;
 
 import ch.uzh.ifi.seal.soprafs16.model.*;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOClimb;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOInvalid;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOMarshal;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOMove;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOPunch;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTORob;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOShoot;
+import ch.uzh.ifi.seal.soprafs16.model.game.Move;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.CardStack;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
 import ch.uzh.ifi.seal.soprafs16.service.FlowService;
 import ch.uzh.ifi.seal.soprafs16.service.PostService;

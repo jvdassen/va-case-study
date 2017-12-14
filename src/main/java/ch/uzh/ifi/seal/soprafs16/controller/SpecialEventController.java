@@ -1,6 +1,6 @@
 package ch.uzh.ifi.seal.soprafs16.controller;
 
-import ch.uzh.ifi.seal.soprafs16.model.DTOSpecialEvent;
+import ch.uzh.ifi.seal.soprafs16.model.dto.DTOSpecialEvent;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

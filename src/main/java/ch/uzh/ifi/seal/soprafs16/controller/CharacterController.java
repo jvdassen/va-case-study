@@ -1,11 +1,12 @@
 package ch.uzh.ifi.seal.soprafs16.controller;
 
 
-import ch.uzh.ifi.seal.soprafs16.model.CardStack;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.CardStackRepository;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.CharacterRepository;
 import org.springframework.web.bind.annotation.RestController;
 import ch.uzh.ifi.seal.soprafs16.model.Character;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.CardStack;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package ch.uzh.ifi.seal.soprafs16.controller;
 
-import ch.uzh.ifi.seal.soprafs16.model.ActionCard;
-import ch.uzh.ifi.seal.soprafs16.model.SpecialAbility;
+import ch.uzh.ifi.seal.soprafs16.model.game.SpecialAbility;
+import ch.uzh.ifi.seal.soprafs16.model.gamecard.ActionCard;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
 
 import ch.uzh.ifi.seal.soprafs16.service.AbilityCheck;

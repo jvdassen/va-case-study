@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import ch.uzh.ifi.seal.soprafs16.model.ShortGame;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.ShortGameRepository;
 import ch.uzh.ifi.seal.soprafs16.service.GameObjectInitialization;
 import ch.uzh.ifi.seal.soprafs16.service.CreationService;
@@ -22,8 +21,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.uzh.ifi.seal.soprafs16.GameConstants;
-import ch.uzh.ifi.seal.soprafs16.model.Game;
 import ch.uzh.ifi.seal.soprafs16.model.User;
+import ch.uzh.ifi.seal.soprafs16.model.game.Game;
+import ch.uzh.ifi.seal.soprafs16.model.game.ShortGame;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.GameRepository;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.UserRepository;
 

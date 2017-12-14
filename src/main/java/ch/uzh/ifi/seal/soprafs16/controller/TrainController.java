@@ -1,7 +1,7 @@
 package ch.uzh.ifi.seal.soprafs16.controller;
 
 
-import ch.uzh.ifi.seal.soprafs16.model.Train;
+import ch.uzh.ifi.seal.soprafs16.model.environment.Train;
 import ch.uzh.ifi.seal.soprafs16.model.repositories.TrainRepository;
 import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;
