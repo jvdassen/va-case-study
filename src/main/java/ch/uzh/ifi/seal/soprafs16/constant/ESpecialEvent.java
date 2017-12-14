@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.soprafs16.model;
+package ch.uzh.ifi.seal.soprafs16.constant;
 
 public enum ESpecialEvent {
     NOTHING, ANGRY_MARSHAL, CRANE, BRAKE, TAKEITALL, PASSENGERS_RESSISTANCE, POCKET_PICKING, REVENGE_MARSHAL, HOSTAGE
