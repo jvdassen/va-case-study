@@ -113,6 +113,7 @@ public class ActionMoveVisitor implements Visitor {
 
 	public List<Move> visit(DTOClimb moveToApply) {
 		setUp(moveToApply);
+		
         Character character = completeTrain.getCharacterInTrain(movingUser);
         completeTrain.removeCharacterInTrain(movingUser);
         trainRepo.save(completeTrain);
@@ -169,6 +170,7 @@ public class ActionMoveVisitor implements Visitor {
 	@Override
 	public List<Move> visit(DTOMarshal moveToApply) {
 		setUp(moveToApply);
+		
         completeTrain.moveMarshal(((DTOMarshal) moveToApply).isLeft());
         List<AmmoCard> ammoCardsAfterMove = new ArrayList<AmmoCard>();
 
@@ -220,7 +222,21 @@ public class ActionMoveVisitor implements Visitor {
 	@Override
 	public List<Move> visit(DTOMove moveToApply) {
 		setUp(moveToApply);
-		return null;
+		           
+		Character character = completeTrain.getCharacterInTrain(movingUser);		
+		completeTrain.removeCharacterInTrain(movingUser);		
+		trainRepo.save(completeTrain);		
+		completeTrain.moveUser(character, movingUserPosition, moveToApply);		
+		trainRepo.save(completeTrain);		
+		for (User user : players) {		
+			if (movingUser != user.getId()) {
+				Move newMove = new DTOMove();		
+				newMove.setUserId(user.getId());		
+				allResultingMoves.add(newMove);		
+			}		
+		 }		
+		 allResultingMoves.add(moveToApply);		
+		 return allResultingMoves;
 	}
 
 	@Override
