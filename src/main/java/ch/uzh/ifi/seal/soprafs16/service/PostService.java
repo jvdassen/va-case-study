@@ -91,10 +91,9 @@ public class PostService {
     /* Apply the consequences of the move onto the game
         @param move: The move the client has posted.
     */
-    public List<Move> applyMove(long gameId, Move moveToApply) {
-
+    public List<Move> applyMove(long gameId, VisitableMove moveToApply) {
     	ActionMoveVisitor actionMoveVisitor = new ActionMoveVisitor(gameId);
-    	actionMoveVisitor.visit(moveToApply);
-
+    	//actionMoveVisitor.visit(moveToApply);
+    	return moveToApply.accept(actionMoveVisitor);
     }
 }
