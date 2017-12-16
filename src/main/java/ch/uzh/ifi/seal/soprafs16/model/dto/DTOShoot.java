@@ -1,14 +1,16 @@
 package ch.uzh.ifi.seal.soprafs16.model.dto;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
 import ch.uzh.ifi.seal.soprafs16.model.User;
-import ch.uzh.ifi.seal.soprafs16.model.game.Move;
 import ch.uzh.ifi.seal.soprafs16.model.gamecard.AmmoCard;
+import ch.uzh.ifi.seal.soprafs16.model.util.Visitor;
 
 @Entity
-public class DTOShoot extends Move{
+public class DTOShoot extends Move implements VisitableMove{
 
     @OneToOne
     private User victim;
@@ -47,4 +49,8 @@ public class DTOShoot extends Move{
     {
         this.marshalAmmoCard = marshalAmmoCard;
     }
+
+	public List<Move> accept(Visitor visitor) {
+		return visitor.visit(this);
+	}
 }

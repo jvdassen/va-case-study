@@ -1,6 +1,7 @@
-package ch.uzh.ifi.seal.soprafs16.model.game;
+package ch.uzh.ifi.seal.soprafs16.model.dto;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,9 +9,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 
+import ch.uzh.ifi.seal.soprafs16.model.util.Visitable;
+import ch.uzh.ifi.seal.soprafs16.model.util.Visitor;
+
 @Entity
 @Inheritance
-public class Move implements Serializable {
+public class Move implements Serializable, Visitable {
 	
 	/**
 	 * 
@@ -47,4 +51,11 @@ public class Move implements Serializable {
 	{
 		this.userId = userId;
 	}
+
+	@Override
+	public List<Move> accept(Visitor visitor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
