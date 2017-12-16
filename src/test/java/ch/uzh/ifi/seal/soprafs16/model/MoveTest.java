@@ -1,11 +1,11 @@
 package ch.uzh.ifi.seal.soprafs16.model;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import ch.uzh.ifi.seal.soprafs16.model.dto.Move;
 import ch.uzh.ifi.seal.soprafs16.model.game.Game;
-import ch.uzh.ifi.seal.soprafs16.model.game.Move;
 /*
  * @author Luc Boillat
  */

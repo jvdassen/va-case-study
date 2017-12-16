@@ -10,7 +10,7 @@ import ch.uzh.ifi.seal.soprafs16.constant.EAction;
 import ch.uzh.ifi.seal.soprafs16.constant.ECharacter;
 import ch.uzh.ifi.seal.soprafs16.constant.ERound;
 import ch.uzh.ifi.seal.soprafs16.constant.ESpecialEvent;
-import ch.uzh.ifi.seal.soprafs16.model.game.Move;
+import ch.uzh.ifi.seal.soprafs16.model.dto.Move;
 import ch.uzh.ifi.seal.soprafs16.model.game.Round;
 import ch.uzh.ifi.seal.soprafs16.model.game.SpecialEvent;
 import ch.uzh.ifi.seal.soprafs16.model.gamecard.ActionCard;
