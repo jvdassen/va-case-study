@@ -1,6 +1,16 @@
 package ch.uzh.ifi.seal.soprafs16.controller;
 
-import ch.uzh.ifi.seal.soprafs16.model.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTOClimb;
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTOInvalid;
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTOMarshal;
@@ -8,17 +18,11 @@ import ch.uzh.ifi.seal.soprafs16.model.dto.DTOMove;
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTOPunch;
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTORob;
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTOShoot;
-import ch.uzh.ifi.seal.soprafs16.model.game.Move;
+import ch.uzh.ifi.seal.soprafs16.model.dto.Move;
 import ch.uzh.ifi.seal.soprafs16.model.gamecard.CardStack;
-import ch.uzh.ifi.seal.soprafs16.model.repositories.*;
+import ch.uzh.ifi.seal.soprafs16.model.repositories.CardStackRepository;
 import ch.uzh.ifi.seal.soprafs16.service.FlowService;
 import ch.uzh.ifi.seal.soprafs16.service.PostService;
-import org.springframework.web.bind.annotation.RestController;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -67,7 +71,7 @@ public class MoveController extends GenericService {
     public void addClimb(@PathVariable long gameId, @PathVariable long userId, @RequestBody DTOClimb move) {
         logger.debug("addMove");
         Move newMove = move;
-        postService.addMoveToStack(gameId, newMove);
+        postService.addMoveToStack(gameId, move);
     }
 
     /* Add move move to stack*/
@@ -76,7 +80,7 @@ public class MoveController extends GenericService {
     public void addMove(@PathVariable long gameId, @PathVariable long userId, @RequestBody DTOMove move) {
         logger.debug("addMove");
         Move newMove = move;
-        postService.addMoveToStack(gameId, newMove);
+        postService.addMoveToStack(gameId, move);
     }
 
     /* Add move shoot to stack */
@@ -85,7 +89,7 @@ public class MoveController extends GenericService {
     public void addShoot(@PathVariable long gameId, @PathVariable long userId, @RequestBody DTOShoot move) {
         logger.debug("addMove");
         Move newMove = move;
-        postService.addMoveToStack(gameId, newMove);
+        postService.addMoveToStack(gameId, move);
     }
 
     /* Add move punch to stack */
@@ -94,7 +98,7 @@ public class MoveController extends GenericService {
     public void addPunch(@PathVariable long gameId, @PathVariable long userId, @RequestBody DTOPunch move) {
         logger.debug("addMove");
         Move newMove = move;
-        postService.addMoveToStack(gameId, newMove);
+        postService.addMoveToStack(gameId, move);
 
     }
 
@@ -104,7 +108,7 @@ public class MoveController extends GenericService {
     public void addMarshal(@PathVariable long gameId, @PathVariable long userId, @RequestBody DTOMarshal move) {
         logger.debug("addMove");
         Move newMove = move;
-        postService.addMoveToStack(gameId, newMove);
+        postService.addMoveToStack(gameId, move);
     }
 
     /* Add move invalid to stack */
@@ -113,7 +117,7 @@ public class MoveController extends GenericService {
     public void addInvalid(@PathVariable long gameId, @PathVariable long userId, @RequestBody DTOInvalid move) {
         logger.debug("addMove");
         Move newMove = move;
-        postService.addMoveToStack(gameId, newMove);
+        postService.addMoveToStack(gameId, move);
     }
 
     /* Add move rob to stack */
@@ -122,6 +126,6 @@ public class MoveController extends GenericService {
     public void addRob(@PathVariable long gameId, @PathVariable long userId, @RequestBody DTORob move) {
         logger.debug("addMove");
         Move newMove = move;
-        postService.addMoveToStack(gameId, newMove);
+        postService.addMoveToStack(gameId, move);
     }
 }

@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ch.uzh.ifi.seal.soprafs16.constant.ETurn;
-import ch.uzh.ifi.seal.soprafs16.model.game.Move;
+import ch.uzh.ifi.seal.soprafs16.model.dto.Move;
+import ch.uzh.ifi.seal.soprafs16.model.dto.VisitableMove;
 import ch.uzh.ifi.seal.soprafs16.model.gamecard.ActionCard;
 import ch.uzh.ifi.seal.soprafs16.model.gamecard.CardStack;
 import ch.uzh.ifi.seal.soprafs16.model.gamecard.RoundCard;
@@ -75,7 +76,7 @@ public class PostService {
     }
 
     /*Adds a move to the stack*/
-    public void addMoveToStack(long gameId, Move move)
+    public void addMoveToStack(long gameId, VisitableMove move)
     {
         List<Move> movesAfterMoveWasExecuted = applyMove(gameId, move);
 
