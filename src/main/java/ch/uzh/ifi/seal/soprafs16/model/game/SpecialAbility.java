@@ -11,6 +11,7 @@ import javax.persistence.Id;
 
 import ch.uzh.ifi.seal.soprafs16.constant.ECharacter;
 import ch.uzh.ifi.seal.soprafs16.model.Character;
+import ch.uzh.ifi.seal.soprafs16.model.dto.Move;
 import ch.uzh.ifi.seal.soprafs16.model.environment.Train;
 import ch.uzh.ifi.seal.soprafs16.model.gamecard.ActionCard;
 import ch.uzh.ifi.seal.soprafs16.model.lootobject.Loot;

@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import ch.uzh.ifi.seal.soprafs16.model.game.Move;
+import ch.uzh.ifi.seal.soprafs16.model.dto.Move;
 import ch.uzh.ifi.seal.soprafs16.model.game.Round;
 import ch.uzh.ifi.seal.soprafs16.model.lootobject.Loot;
 

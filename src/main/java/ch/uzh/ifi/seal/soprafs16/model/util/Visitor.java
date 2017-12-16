@@ -9,7 +9,7 @@ import ch.uzh.ifi.seal.soprafs16.model.dto.DTOMove;
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTOPunch;
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTORob;
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTOShoot;
-import ch.uzh.ifi.seal.soprafs16.model.game.Move;;
+import ch.uzh.ifi.seal.soprafs16.model.dto.Move;;
 
 public interface Visitor {
 	public List<Move> visit(DTOClimb move);

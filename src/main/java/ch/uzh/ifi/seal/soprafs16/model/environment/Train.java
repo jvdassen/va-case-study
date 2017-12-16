@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 
 import ch.uzh.ifi.seal.soprafs16.model.Character;
 import ch.uzh.ifi.seal.soprafs16.model.dto.DTOMove;
-import ch.uzh.ifi.seal.soprafs16.model.game.Move;
+import ch.uzh.ifi.seal.soprafs16.model.dto.Move;
 
 @Entity
 public class Train implements Serializable {
