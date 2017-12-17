@@ -96,4 +96,10 @@ public class PostService {
     	//actionMoveVisitor.visit(moveToApply);
     	return moveToApply.accept(actionMoveVisitor);
     }
+    public void applyAllMovesAgain(long gameId, List<Move> executedMoves) {
+    	ActionMoveVisitor actionMoveVisitor = new ActionMoveVisitor(gameId);
+    	for (Move executedMove: executedMoves){
+    		executedMove.accept(actionMoveVisitor);
+    	}
+    }
 }
